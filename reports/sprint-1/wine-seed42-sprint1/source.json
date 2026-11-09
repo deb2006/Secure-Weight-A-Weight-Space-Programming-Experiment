@@ -1,0 +1,20 @@
+{
+  "git_commit": null,
+  "git_dirty": null,
+  "source_files": {
+    "__init__.py": "f3123b583f3331db524fce90d58a0749504c5222e7195fc07c5a5f7ce7cb4408",
+    "__main__.py": "2392471aa71ec4397538925463704996d609ebbd39334059643cd65d342e9792",
+    "cli.py": "7bd1373a35df59bf81674c3e956cbec1b7fe632ecd8bb45e1db4bd2c1916fb76",
+    "config.py": "bf49567811f5474cff11b8a0a5e292d1c22a8188ad316e4d602119372879a36f",
+    "data/__init__.py": "ed4d762ed193661c18e58e8f9d5c6b990de0ab9782ce03eaa6cfbfdf1bdab4a9",
+    "evaluation/__init__.py": "ecc7d01c12b4cdedae1bf258cc5a4d50fe2e8c24f86f4694b5c0ff2edd11c69d",
+    "evaluation/figures.py": "e90a8fdccd2e1bcebe905e414257a2f445028c91685be74a309b7cc65929eddc",
+    "experiment.py": "5b9b5255be29829516f25a7fcffee53949c113df56bb1e381df3eb9f64d22fa3",
+    "models/__init__.py": "178b9f6d6e5348454f16f96c8beb19c5f7256d7b7216215bba72916fdb9a7715",
+    "models/checkpoints.py": "196fce15dd11aab0bfd27cfe9ee50046f58b9d2d61bea5b57e7dee6f7db39a71",
+    "models/training.py": "f8de84031c70b6b5869e70cbc4ce1d76b30e62890810f6588d23567ab4d061a3",
+    "models/weights.py": "ca435282a8817bfbcd54590b684ef971824357d2a2cc3963272efbea742637d1",
+    "tracking/__init__.py": "899c8b1b06451cf6a8c78371e2a44686019745f848a25cf99483d7b34fab796e"
+  },
+  "source_sha256": "5b761893cea2377e4234e9a6b603b34116d13821b2efc5aaf64774054369e6b2"
+}

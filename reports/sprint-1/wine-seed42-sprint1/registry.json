@@ -1,0 +1,147 @@
+{
+  "activation": "relu",
+  "architecture": {
+    "hidden_dim": 8,
+    "input_dim": 13,
+    "output_dim": 3
+  },
+  "checkpoint": "healthy.pt",
+  "checkpoint_sha256": "7cac7f239abb0cc62b46e34296cc6986ae737c450ff520b7e9802cb00d3243ec",
+  "healthy_validation_metrics": {
+    "accuracy": 1.0,
+    "class_names": [
+      "class_0",
+      "class_1",
+      "class_2"
+    ],
+    "classification_report": {
+      "accuracy": 1.0,
+      "class_0": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "class_1": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 7.0
+      },
+      "class_2": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "macro avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 18.0
+      },
+      "weighted avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 18.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ],
+      [
+        0,
+        0,
+        5
+      ]
+    ],
+    "loss": 0.06224669888615608,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "n_samples": 18,
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "sample_indices": [
+      11,
+      15,
+      31,
+      34,
+      35,
+      54,
+      77,
+      78,
+      82,
+      84,
+      100,
+      106,
+      126,
+      134,
+      136,
+      138,
+      153,
+      154
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "zero_division_policy": 0
+  },
+  "parameter_count": 139,
+  "protection": "exclusive writes and checksums, not OS access control or a signature",
+  "role": "researcher-only healthy reference",
+  "run_id": "wine-seed42-sprint1",
+  "schema_version": 1,
+  "selection": {
+    "best_epoch": 56,
+    "best_validation_loss": 0.06224669888615608,
+    "criterion": "minimum validation cross-entropy",
+    "tie_policy": "earliest epoch"
+  },
+  "weights": "weights.json",
+  "weights_sha256": "d13a282037b63c5894e96f82053383bdce3ba050a7d6adf0272ab150a3ece3bd"
+}

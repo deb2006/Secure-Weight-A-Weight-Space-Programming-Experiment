@@ -1,0 +1,44 @@
+{
+  "annotation": "minimum validation loss selects checkpoint; test used only after selection",
+  "claim": "Describe one healthy baseline training trajectory and its final test errors; no repair claim.",
+  "class_order": [
+    "setosa",
+    "versicolor",
+    "virginica"
+  ],
+  "dimensions_mm": {
+    "confusion_matrix": [
+      178,
+      110
+    ],
+    "loss": [
+      178,
+      100
+    ]
+  },
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "metrics": {
+    "confusion_matrix": "sample counts",
+    "cross_entropy": "mean per sample, lower is better"
+  },
+  "seed": 42,
+  "series_order": [
+    "train",
+    "validation"
+  ],
+  "sources": [
+    "history.json",
+    "metrics.json",
+    "selection.json",
+    "config.json"
+  ],
+  "test_n": 22,
+  "uncertainty": "one seed, no uncertainty interval estimated",
+  "visual_form": [
+    "ordered epoch line plot",
+    "annotated confusion matrix"
+  ]
+}

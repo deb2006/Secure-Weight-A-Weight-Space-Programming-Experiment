@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "PyYAML": "6.0.3",
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "secureweight": "0.1.0",
+    "torch": "2.15.0+cpu"
+  },
+  "deterministic_algorithms": true,
+  "device": "cpu",
+  "machine": "AMD64",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "torch_threads": 1
+}

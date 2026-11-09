@@ -1,0 +1,151 @@
+{
+  "command": "python -m pytest -q --basetemp outputs/pytest-final --junitxml=outputs/pytest-results-final.xml",
+  "tests": 34,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 23.267,
+  "cases": [
+    {
+      "file": "tests.test_data_config",
+      "name": "test_split_complete_disjoint_stratified_and_train_only_scaling[iris-load_iris]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_split_complete_disjoint_stratified_and_train_only_scaling[wine-load_wine]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_fixed_seed_and_different_seed"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs0]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs1]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs2]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs3]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs4]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs5]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs6]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs7]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs8]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs9]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs10]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_invalid_configuration[kwargs11]"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_config_formats_and_unknown_keys"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_impossible_split_rejected"
+    },
+    {
+      "file": "tests.test_data_config",
+      "name": "test_nonfinite_raw_features_rejected"
+    },
+    {
+      "file": "tests.test_experiment",
+      "name": "test_metrics_against_hand_computed_predictions"
+    },
+    {
+      "file": "tests.test_experiment",
+      "name": "test_end_to_end_provenance_figures_integrity_and_cli"
+    },
+    {
+      "file": "tests.test_experiment",
+      "name": "test_failure_is_retained"
+    },
+    {
+      "file": "tests.test_experiment",
+      "name": "test_run_id_cannot_escape_output_root"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_architecture"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_deterministic_training_and_validation_selection[adam]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_deterministic_training_and_validation_selection[sgd]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_checkpoint_roundtrip_and_no_overwrite"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_json_exact_roundtrip_including_extreme_finite_float32"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_invalid_serialization_does_not_mutate_model[name]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_invalid_serialization_does_not_mutate_model[shape]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_invalid_serialization_does_not_mutate_model[dtype]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_invalid_serialization_does_not_mutate_model[nan]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_invalid_serialization_does_not_mutate_model[values]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_invalid_serialization_does_not_mutate_model[architecture]"
+    },
+    {
+      "file": "tests.test_models",
+      "name": "test_nonfinite_weights_not_saved"
+    }
+  ],
+  "installation": "editable install succeeded; pip check passed; wheel build succeeded",
+  "earlier_attempts": [
+    "Import collection attempted before editable install completed: 3 errors; rerun after installation.",
+    "Temporary parent outputs absent: 21 passed, 13 fixture errors; create parent and fix README before rerun."
+  ]
+}

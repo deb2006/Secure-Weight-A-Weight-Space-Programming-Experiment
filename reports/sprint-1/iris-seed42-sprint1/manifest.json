@@ -1,0 +1,115 @@
+{
+  "artifacts": {
+    "config.json": "a26e542aa113ca5ea4a1a47b96dda27332b6d59a29afe3485cbd1696c03f4520",
+    "dataset.json": "8d37347dd4f045125c21817be75dd0b5fc1b8202ae128172f09c0d2b177a5f16",
+    "environment.json": "10cd9efe5380b2a848475f1091e4c766cfa38c3d8e3971f76d718bbde7bde26d",
+    "figures/confusion_matrix.png": "a527233b765776144ab697ac68966db1f0ff865345967c6a7f17cbd38d57d01f",
+    "figures/confusion_matrix.svg": "3c04753ac670f24bc7bdccb243c6bf30755d184f57c1f3b716f5d07c43fb7703",
+    "figures/loss_curves.png": "325033aaf04ea0deaa4d75a85e32b0e47bf641d91154fd2e0dd901b0e5e5b710",
+    "figures/loss_curves.svg": "ec39f3269d100500158c21e56c5c9c9b6ed415963a8cea6b556e2ef5e798ff06",
+    "figures/visual_spec.json": "7aa33a2dccb4124799b1b8b61cf763feff4de9dc8a5e6d532e666160378cf3b3",
+    "healthy.pt": "79e31ba03d90407233dac3c2d901bf8625e5b32e78be036e7024ad75041b5173",
+    "history.json": "b934f4e679827843370f06ae418a869c49e4aac9f0d5be90f800b751140f1b18",
+    "metrics.json": "b885a6db2eadc4c683840855f66e52de36e94c879aa265e0bcd026efddbeb101",
+    "registry.json": "f2a43485d323dec0c2d612763b66ca50b47158f7663d99c33639cec1018aab85",
+    "selection.json": "6b52d560b6b67fd9dc712b0c2762c341b83afa83d4df7eb41453b12f4cae61a9",
+    "source.json": "7940d248d2f358e147ec4aadbc5a92f2d513f0800005638758d9214a2745162a",
+    "started.json": "d46e8ab316f241f0c7d12b3386c35de7eced6d91cc008e01607ac93e38cd794b",
+    "weights.json": "0d5e1081e68c7e933963a41a94e0e5c818252fb538eb8eb9c262874914083141"
+  },
+  "checkpoint_reference": "healthy.pt",
+  "checkpoint_sha256": "79e31ba03d90407233dac3c2d901bf8625e5b32e78be036e7024ad75041b5173",
+  "completed_utc": "2026-11-09T12:02:23.706331+00:00",
+  "config": {
+    "dataset": "iris",
+    "epochs": 300,
+    "hidden_dim": 8,
+    "learning_rate": 0.01,
+    "optimizer": "adam",
+    "probe_fraction": 0.15,
+    "seed": 42,
+    "test_fraction": 0.15,
+    "train_fraction": 0.6,
+    "validation_fraction": 0.1
+  },
+  "dataset_id": "iris",
+  "dataset_sha256": "aa06b8008ceba42efc654be0f83fdafc786239c9e8f13146044d078f5aab8f23",
+  "environment": {
+    "dependencies": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "secureweight": "0.1.0",
+      "torch": "2.15.0+cpu"
+    },
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "torch_threads": 1
+  },
+  "environment_hash": "a4ba9a20bdfb0c8c7232689041e6c4af1772cfa45e096042112c5df7ff1ce62d",
+  "limitations": [
+    "One small-dataset baseline, not a repair experiment or hypothesis test.",
+    "Test results are development evidence; freeze fresh study seeds before later research.",
+    "No agent or OS-level holdout access isolation exists in Sprint 1."
+  ],
+  "model_architecture": {
+    "activation": "relu",
+    "hidden_dim": 8,
+    "input_dim": 4,
+    "output_dim": 3,
+    "parameter_count": 67
+  },
+  "probe_used": false,
+  "roundtrip_validation": {
+    "checkpoint_max_logit_delta": 0.0,
+    "json_max_logit_delta": 0.0
+  },
+  "run_id": "iris-seed42-sprint1",
+  "schema_version": 1,
+  "seed": 42,
+  "source": {
+    "git_commit": null,
+    "git_dirty": null,
+    "source_files": {
+      "__init__.py": "f3123b583f3331db524fce90d58a0749504c5222e7195fc07c5a5f7ce7cb4408",
+      "__main__.py": "2392471aa71ec4397538925463704996d609ebbd39334059643cd65d342e9792",
+      "cli.py": "7bd1373a35df59bf81674c3e956cbec1b7fe632ecd8bb45e1db4bd2c1916fb76",
+      "config.py": "bf49567811f5474cff11b8a0a5e292d1c22a8188ad316e4d602119372879a36f",
+      "data/__init__.py": "ed4d762ed193661c18e58e8f9d5c6b990de0ab9782ce03eaa6cfbfdf1bdab4a9",
+      "evaluation/__init__.py": "ecc7d01c12b4cdedae1bf258cc5a4d50fe2e8c24f86f4694b5c0ff2edd11c69d",
+      "evaluation/figures.py": "e90a8fdccd2e1bcebe905e414257a2f445028c91685be74a309b7cc65929eddc",
+      "experiment.py": "5b9b5255be29829516f25a7fcffee53949c113df56bb1e381df3eb9f64d22fa3",
+      "models/__init__.py": "178b9f6d6e5348454f16f96c8beb19c5f7256d7b7216215bba72916fdb9a7715",
+      "models/checkpoints.py": "196fce15dd11aab0bfd27cfe9ee50046f58b9d2d61bea5b57e7dee6f7db39a71",
+      "models/training.py": "f8de84031c70b6b5869e70cbc4ce1d76b30e62890810f6588d23567ab4d061a3",
+      "models/weights.py": "ca435282a8817bfbcd54590b684ef971824357d2a2cc3963272efbea742637d1",
+      "tracking/__init__.py": "899c8b1b06451cf6a8c78371e2a44686019745f848a25cf99483d7b34fab796e"
+    },
+    "source_sha256": "5b761893cea2377e4234e9a6b603b34116d13821b2efc5aaf64774054369e6b2"
+  },
+  "split_counts": {
+    "probe": 22,
+    "test": 22,
+    "train": 91,
+    "validation": 15
+  },
+  "split_sha256": "ee70baf7206c3036e128c66885586cd43963cb767f52ebdd397bb99b0432af75",
+  "status": "completed",
+  "study_version": "sprint-1-healthy-testbed",
+  "test_evaluations": 1,
+  "time_utc": "2026-11-09T12:02:16.918810+00:00",
+  "training": {
+    "batch_policy": "full batch",
+    "selection": {
+      "best_epoch": 300,
+      "best_validation_loss": 0.24148984253406525,
+      "criterion": "minimum validation cross-entropy",
+      "tie_policy": "earliest epoch"
+    }
+  }
+}

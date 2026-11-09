@@ -1,0 +1,138 @@
+{
+  "activation": "relu",
+  "architecture": {
+    "hidden_dim": 8,
+    "input_dim": 4,
+    "output_dim": 3
+  },
+  "checkpoint": "healthy.pt",
+  "checkpoint_sha256": "79e31ba03d90407233dac3c2d901bf8625e5b32e78be036e7024ad75041b5173",
+  "healthy_validation_metrics": {
+    "accuracy": 0.8666666666666667,
+    "class_names": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ],
+    "classification_report": {
+      "accuracy": 0.8666666666666667,
+      "macro avg": {
+        "f1-score": 0.8611111111111112,
+        "precision": 0.9047619047619048,
+        "recall": 0.8666666666666667,
+        "support": 15.0
+      },
+      "setosa": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "versicolor": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "virginica": {
+        "f1-score": 0.75,
+        "precision": 1.0,
+        "recall": 0.6,
+        "support": 5.0
+      },
+      "weighted avg": {
+        "f1-score": 0.8611111111111112,
+        "precision": 0.9047619047619048,
+        "recall": 0.8666666666666667,
+        "support": 15.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ],
+    "loss": 0.24148984253406525,
+    "macro_f1": 0.8611111111111112,
+    "macro_precision": 0.9047619047619048,
+    "macro_recall": 0.8666666666666667,
+    "n_samples": 15,
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "sample_indices": [
+      1,
+      32,
+      40,
+      41,
+      47,
+      65,
+      73,
+      74,
+      75,
+      99,
+      105,
+      106,
+      119,
+      126,
+      146
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "zero_division_policy": 0
+  },
+  "parameter_count": 67,
+  "protection": "exclusive writes and checksums, not OS access control or a signature",
+  "role": "researcher-only healthy reference",
+  "run_id": "iris-seed42-sprint1",
+  "schema_version": 1,
+  "selection": {
+    "best_epoch": 300,
+    "best_validation_loss": 0.24148984253406525,
+    "criterion": "minimum validation cross-entropy",
+    "tie_policy": "earliest epoch"
+  },
+  "weights": "weights.json",
+  "weights_sha256": "0d5e1081e68c7e933963a41a94e0e5c818252fb538eb8eb9c262874914083141"
+}

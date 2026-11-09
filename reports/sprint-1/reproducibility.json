@@ -1,0 +1,17 @@
+{
+  "checkpoint_bytes_equal": true,
+  "exact_matches": {
+    "config.json": true,
+    "dataset.json": true,
+    "history.json": true,
+    "metrics.json": true,
+    "selection.json": true,
+    "weights.json": true
+  },
+  "interpretation": "Fixed-seed software reproducibility; not independent statistical replication",
+  "runs": [
+    "iris-seed42-sprint1",
+    "iris-seed42-rerun"
+  ],
+  "source_hash_matches_current": true
+}
