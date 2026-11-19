@@ -1,0 +1,5 @@
+operator: offset
+seed: 42
+fraction: 1.0
+magnitude: 1.0
+tensors: [output.bias]

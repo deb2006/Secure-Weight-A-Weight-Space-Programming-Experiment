@@ -1,0 +1,198 @@
+{
+  "cases": [
+    {
+      "attempted": 0,
+      "case": "cases/7309511fbfc0432ab61de29e6926b0f0",
+      "changed": 0,
+      "damaged_accuracy": 0.8666666666666667,
+      "dataset": "iris",
+      "healthy_accuracy": 0.8666666666666667,
+      "profile": "healthy",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.0,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 7,
+      "case": "cases/6ea6ed51407b457db74a00a5df73a86c",
+      "changed": 7,
+      "damaged_accuracy": 0.9333333333333333,
+      "dataset": "iris",
+      "healthy_accuracy": 0.8666666666666667,
+      "profile": "gaussian",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": -0.06666666666666665,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 7,
+      "case": "cases/18b28a8f15174c568624e0fd224d010e",
+      "changed": 7,
+      "damaged_accuracy": 1.0,
+      "dataset": "iris",
+      "healthy_accuracy": 0.8666666666666667,
+      "profile": "bit-flip",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": -0.1333333333333333,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 8,
+      "case": "cases/c5fb1ee45b214b7a82f23e7ca1bc222f",
+      "changed": 8,
+      "damaged_accuracy": 0.6666666666666666,
+      "dataset": "iris",
+      "healthy_accuracy": 0.8666666666666667,
+      "profile": "sign",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.20000000000000007,
+        "band": "moderate",
+        "damaging": true
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 40,
+      "case": "cases/ebc73fca4d58431da0eccfe25404907e",
+      "changed": 40,
+      "damaged_accuracy": 0.3333333333333333,
+      "dataset": "iris",
+      "healthy_accuracy": 0.8666666666666667,
+      "profile": "scale",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.5333333333333334,
+        "band": "severe",
+        "damaging": true
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 3,
+      "case": "cases/f10318dccaeb4cc1a1cb57d3e9bce014",
+      "changed": 3,
+      "damaged_accuracy": 0.8666666666666667,
+      "dataset": "iris",
+      "healthy_accuracy": 0.8666666666666667,
+      "profile": "offset",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.0,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 0,
+      "case": "cases/327f2f2e2e394f089f170132198230e5",
+      "changed": 0,
+      "damaged_accuracy": 1.0,
+      "dataset": "wine",
+      "healthy_accuracy": 1.0,
+      "profile": "healthy",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.0,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 14,
+      "case": "cases/575335427c5949629d45c86d1d0d38e2",
+      "changed": 14,
+      "damaged_accuracy": 1.0,
+      "dataset": "wine",
+      "healthy_accuracy": 1.0,
+      "profile": "gaussian",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.0,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 14,
+      "case": "cases/cbf1a3c20cad4f8db1b393bcbb3c4376",
+      "changed": 14,
+      "damaged_accuracy": 1.0,
+      "dataset": "wine",
+      "healthy_accuracy": 1.0,
+      "profile": "bit-flip",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.0,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 17,
+      "case": "cases/6736f21f3d844bab9d780ddfcbd713c1",
+      "changed": 17,
+      "damaged_accuracy": 0.9444444444444444,
+      "dataset": "wine",
+      "healthy_accuracy": 1.0,
+      "profile": "sign",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.05555555555555558,
+        "band": "mild",
+        "damaging": false
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 112,
+      "case": "cases/7a0091ff9a1d4630b359d8f5b4acd632",
+      "changed": 112,
+      "damaged_accuracy": 0.3888888888888889,
+      "dataset": "wine",
+      "healthy_accuracy": 1.0,
+      "profile": "scale",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.6111111111111112,
+        "band": "severe",
+        "damaging": true
+      },
+      "status": "completed"
+    },
+    {
+      "attempted": 3,
+      "case": "cases/1a3c8cf7e61c4d4ca52a881c49c51d85",
+      "changed": 3,
+      "damaged_accuracy": 1.0,
+      "dataset": "wine",
+      "healthy_accuracy": 1.0,
+      "profile": "offset",
+      "rejected": 0,
+      "severity": {
+        "accuracy_drop": 0.0,
+        "band": "none_or_improved",
+        "damaging": false
+      },
+      "status": "completed"
+    }
+  ],
+  "interpretation": "One seed per dataset/profile; validation-only engineering smoke cases, not calibrated study bands or repair results.",
+  "protocol": "sprint-2-development-v1"
+}

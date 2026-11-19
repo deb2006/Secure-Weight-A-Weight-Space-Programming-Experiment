@@ -1,5 +1,7 @@
 # Research Attribution Register
 
+Sprint 2 addition (19 November 2026): the fault sampler, case orchestration and tests are newly written project code. They use the already attributed NumPy RNG, PyTorch tensor/model APIs and Python's standard-library `struct` for IEEE-754 bit reinterpretation. Gaussian perturbation, XOR bit faults, sign/scale/offset operations are conventional techniques; no novelty or reproduction of a cited research implementation is claimed. No new dependency or external code was introduced.
+
 Scope: Sprint 1. Checked 9 November 2026. This register separates dependency use, dataset use and future research context. SecureWeight's project-specific orchestration, configuration, tests and artifact contracts were newly written with Codex assistance; standard MLP training and classification metrics are not original research contributions. No third-party research repository code was copied or adapted into Sprint 1.
 
 ## Data and implemented methods

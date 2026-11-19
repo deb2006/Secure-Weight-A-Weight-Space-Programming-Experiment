@@ -1,6 +1,6 @@
 # SecureWeight
 
-**Sprint 1: healthy neural-network testbed.** An experimental foundation for studying LLM-guided repair of corrupted neural networks. The current code trains, evaluates, saves and inspects clean models. It does not implement corruption, LLM diagnosis, repair, symmetry transformations or comparative research claims.
+**Sprint 2: controlled fault engine and healthy neural-network testbed.** The platform trains clean models, creates isolated corrupted copies, logs fault truth and assesses validation degradation. LLM diagnosis, repair and symmetry remain later work. See the [Sprint 2 protocol](docs/SPRINT_2_PROTOCOL.md) and [completion report](docs/SPRINT_2_REPORT.md).
 
 ## Setup
 
@@ -56,6 +56,7 @@ src/secureweight/
   config.py                 Validated experiment settings
   data/                     Splits, fingerprints, preprocessing
   models/                   MLP, training, checkpoints, JSON weights
+  faults/                   Seeded copy-only faults, case records and export
   evaluation/               Metrics and figures
   tracking/                 Provenance and exclusive-write helpers
   experiment.py             One healthy experiment orchestration
@@ -80,4 +81,4 @@ Files are created exclusively, and checkpoint hashes detect accidental changes r
 
 These are tiny public classification datasets and a single-seed development demonstration. No accuracy is an estimate of LLM repair performance, malicious-fault detection, permutation robustness or production security. Repeated fixed-seed execution checks software determinism; it is not an independent statistical replication. The visible development test results must not be reused to tune a later confirmatory study. Freeze new study seeds, evidence access and endpoints before that study.
 
-The supplied PRD still says review draft; the user's development initialization explicitly authorized Sprint 1. See `docs/DECISIONS.md` for scope reconciliation and `docs/SPRINT_1_REPORT.md` for executed checks and actual results. Stop at Sprint 1 review. Sprint 2 requires explicit approval. Source-code licensing is a researcher decision; no repository-wide license has been assumed. External sources and dependency licenses are documented in `RESEARCH_ATTRIBUTION.md`.
+The supplied PRD still says review draft; the user explicitly authorized Sprint 1 and subsequently Sprint 2 on 19 November 2026. See `docs/DECISIONS.md` and the sprint reports for scope decisions and actual evidence. Sprint 3 requires explicit approval. Source-code licensing remains a researcher decision; no repository-wide license has been assumed. External sources and dependency licenses are documented in `RESEARCH_ATTRIBUTION.md`.
