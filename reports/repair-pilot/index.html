@@ -49,7 +49,7 @@ h1,h2,h3,h4,p,dl,figure{margin:0}h1,h2,h3,h4{line-height:1.07;letter-spacing:-.0
 <div class="trial-evidence"><div><h4>LLM decisions</h4><dl id="decisions"></dl><details><summary>Read the follow-up explanation</summary><p id="explanation"></p></details></div><div><h4>Correct classifications</h4><div id="trialAccuracy"></div></div></div>
 <div class="weight-area"><div><h4>Output-weight map</h4><p class="note">Select a connection for its values. Rows are classes and columns are hidden units.</p><div class="map-legend"><span>• Healthy</span><span>○ Damaged</span><span>◆ Edited</span></div></div><div><div id="weightMap"></div><p id="weightReadout" class="weight-readout" aria-live="polite"></p></div></div></div>
 <div class="conclusion"><p class="eyebrow">Inference</p><h3>Finding a fault and fixing it are different outcomes.</h3><p>Across the twelve blinded checkpoints, the initial replies proposed three edits. Each targeted an altered weight. All three replacement values differed from their healthy originals. On Wine trial 06, two replacements corrected four held-out errors. On Iris trial 12, a correctly located sign change left every evaluated prediction unchanged. The other four damaged checkpoints received KEEP.</p><p>Three of six damaged checkpoints drew suspicion. All three positive follow-ups declined to specify an edit. The six healthy controls drew no false alarms.</p></div>
-<details class="archive"><summary>Study design, selection and limits</summary><p>Three training seeds per dataset shared one split. Faults affected three of 24 output weights. Replacement values lay between the healthy layer’s 5th and 95th percentiles and cost two or three correct validation predictions. Held-out scores played no role in fault selection. This small batch measures behavior on these cases; performance across other faults, networks and repeated LLM responses remains open.</p><p>Trial 03 received repeated follow-up wording within a single message. Trial 11’s first completed response followed an interrupted generation and a retry. Earlier blank pilot replies were recorded as missing.</p></details>
+<details class="archive"><summary>Study design, selection and limits</summary><p>Three training seeds per dataset shared one split. Faults affected three of 24 output weights. Replacement values lay between the healthy layer’s 5th and 95th percentiles and cost two or three correct validation predictions. Held-out scores played no role in fault selection. This small batch measures behavior on these cases; performance across other faults, networks and repeated LLM responses remains open.</p><p>Trial 03 received repeated follow-up wording within a single message. Trial 11’s first completed response followed an interrupted generation and a retry. Earlier blank pilot replies had no usable response to score.</p></details>
 </section>
 <section id="explorer" class="chapter lab"><p class="eyebrow">Development controls</p><h2>Case explorer</h2><p class="intro">Inspect weights and export blind prompts from the original 12 development cases.</p><div class="controls"><label>Experiment case <select id="cases"></select></label><span id="progress" class="count"></span></div>
 <div class="grid"><article><h2>Inside the classifier</h2><p id="task"></p><p id="architecture" class="subtle"></p><label>Weight tensor <select id="tensor"></select></label><div id="heat"></div><div class="subtle">Negative <span class="legend"></span> positive · slate is zero</div><div id="scale" class="subtle"></div><details><summary>Inspect exact numeric values</summary><pre id="values"></pre></details></article>
@@ -117,7 +117,10 @@ function draw(){
  el('retention').textContent=res?.status==='scored'?res.edits+' edits proposed · '+res.preserved+' of '+res.unaffected+' previously unchanged decisions preserved.':'';
  el('form').hidden=!token||Boolean(res);el('raw').value='';
  const displayModel=res?.model?.includes('GPT-6')?'GPT-6':res?.model;
- el('status').textContent=res?'Recorded · '+displayModel+' · '+res.status+(res.reason?' · '+res.reason:''):token?'Awaiting first response.':'Portable view. The local scoring server records new responses.';
+ el('status').textContent=res?.status==='missing'
+   ? displayModel+' · '+(res.reason||'No usable reply was captured for this case.')
+   : res?'Recorded · '+displayModel+' · '+res.status+(res.reason?' · '+res.reason:'')
+   : token?'Awaiting first response.':'Portable view. The local scoring server records new responses.';
 }
 el('cases').onchange=draw;el('tensor').onchange=matrix;
 el('download').onclick=()=>{const r=current(),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.prompt],{type:'text/plain'}));a.download=r.id+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
@@ -225,7 +228,7 @@ if(token){const saved=rows.findIndex(r=>r.id===sessionStorage.getItem('pilotCase
     }
     byId('pilotNote').textContent = split === 'test'
       ? 'Held-out testing was recorded for the two hidden-layer repairs. A dash indicates an unmeasured split.'
-      : 'Correct / total validation examples. Early blank replies were logged as missing.';
+      : 'Correct / total validation examples. Early blank replies had no usable response to score.';
   }
 
   function renderTopology() {

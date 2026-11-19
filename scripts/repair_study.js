@@ -95,7 +95,7 @@
     }
     byId('pilotNote').textContent = split === 'test'
       ? 'Held-out testing was recorded for the two hidden-layer repairs. A dash indicates an unmeasured split.'
-      : 'Correct / total validation examples. Early blank replies were logged as missing.';
+      : 'Correct / total validation examples. Early blank replies had no usable response to score.';
   }
 
   function renderTopology() {
