@@ -100,7 +100,8 @@ function draw(){
  const num=document.createElement('strong');num.textContent=value==null?(res||label!=='After reply'?'Unscored':'Pending'):Math.round(value*r.n)+' / '+r.n;line.append(name,track,num);el('bars').append(line)}
  el('retention').textContent=res?.status==='scored'?res.edits+' edits proposed · '+res.preserved+' of '+res.unaffected+' previously unchanged decisions preserved.':'';
  el('form').hidden=!token||Boolean(res);el('raw').value='';
- el('status').textContent=res?'Recorded · '+res.model+' · '+res.status+(res.reason?' · '+res.reason:''):token?'Awaiting first response.':'Portable view. The local scoring server records new responses.';
+ const displayModel=res?.model?.includes('GPT-6')?'GPT-6':res?.model;
+ el('status').textContent=res?'Recorded · '+displayModel+' · '+res.status+(res.reason?' · '+res.reason:''):token?'Awaiting first response.':'Portable view. The local scoring server records new responses.';
 }
 el('cases').onchange=draw;el('tensor').onchange=matrix;
 el('download').onclick=()=>{const r=current(),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.prompt],{type:'text/plain'}));a.download=r.id+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
