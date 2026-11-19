@@ -1,0 +1,182 @@
+{
+  "accuracy": {
+    "damaged": 0.3181818181818182,
+    "healthy": 0.9090909090909091,
+    "repaired": 0.9545454545454546
+  },
+  "case_id": "8e781ea7b5ab4ae3b118d676939638a4",
+  "class_names": [
+    "setosa",
+    "versicolor",
+    "virginica"
+  ],
+  "correct": {
+    "damaged": 7,
+    "healthy": 20,
+    "repaired": 21
+  },
+  "damaged_checkpoint_sha256": "917169dc1737c653b52e914fa8be8c09bff37a8235df374f4f94c0a9147bde9c",
+  "healthy_checkpoint_sha256": "79e31ba03d90407233dac3c2d901bf8625e5b32e78be036e7024ad75041b5173",
+  "labels": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "n": 22,
+  "normalized_patch": {
+    "case_id": "8e781ea7b5ab4ae3b118d676939638a4",
+    "edits": [
+      {
+        "index": [
+          4,
+          2
+        ],
+        "tensor": "hidden.weight",
+        "value": -1.15
+      },
+      {
+        "index": [
+          2,
+          2
+        ],
+        "tensor": "hidden.weight",
+        "value": 0.4
+      },
+      {
+        "index": [
+          2,
+          3
+        ],
+        "tensor": "hidden.weight",
+        "value": 0.42
+      }
+    ]
+  },
+  "paired": {
+    "healthy_only_correct_vs_repaired": 0,
+    "healthy_repaired_agreement": 21,
+    "newly_correct_vs_damaged": 15,
+    "newly_wrong_vs_damaged": 1,
+    "repaired_only_correct_vs_healthy": 1
+  },
+  "partition": "test",
+  "predictions": {
+    "damaged": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "healthy": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "repaired": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "row_indices": [
+    7,
+    14,
+    18,
+    20,
+    28,
+    38,
+    42,
+    51,
+    56,
+    57,
+    69,
+    77,
+    93,
+    96,
+    104,
+    107,
+    116,
+    132,
+    134,
+    138,
+    141,
+    147
+  ],
+  "source_trial_sha256": "53cfbb44d773888979b083610afb50e7eda9a55ea8125fb0df1af9672cc7c6c1",
+  "time_utc": "2026-11-19T07:50:04.399873+00:00"
+}

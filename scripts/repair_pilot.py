@@ -14,7 +14,7 @@ from secureweight.config import load_config
 from secureweight.data import prepare_data
 from secureweight.faults.cases import verify_case
 from secureweight.models.checkpoints import load_checkpoint
-from secureweight.tracking import object_hash, read_json, write_json
+from secureweight.tracking import file_hash, object_hash, read_json, write_json
 
 ROOT = Path(__file__).resolve().parents[1]
 PILOT = ROOT / "reports" / "repair-pilot"
@@ -108,6 +108,28 @@ def score(case, raw, model_name):
                 preserved=int(((after==clean)&preserved).sum()), unaffected=int(preserved.sum()))
 
 
+def completed_repairs():
+    results = []
+    for dataset in ("Iris", "Wine"):
+        folder = PILOT / "manual-results" / f"{dataset.lower()}-hidden-layer-v3-pro"
+        validation_path = folder / "result.json"
+        validation = read_json(validation_path)
+        test = read_json(folder / "held-out-test.json")
+        if (test["source_trial_sha256"] != file_hash(validation_path)
+                or test["case_id"] != validation["case_id"]
+                or test["normalized_patch"] != validation["normalized_patch"]):
+            raise ValueError(f"{dataset} scores do not refer to the same saved patch")
+        n = validation["validation_count"]
+        results.append({
+            "dataset": dataset, "case": test["case_id"],
+            "edits": validation["normalized_patch"]["edits"],
+            "validation": {"n": n, "healthy": round(validation["healthy"] * n),
+                           "damaged": round(validation["before"] * n), "repaired": validation["correct"]},
+            "test": {"n": test["n"], **test["correct"]}, "paired": test["paired"],
+        })
+    return results
+
+
 def render(cases, token=""):
     rows = []
     for case in cases.values():
@@ -115,7 +137,7 @@ def render(cases, token=""):
         response = PILOT/"responses"/(row["id"]+".json")
         row["result"] = read_json(response) if response.is_file() else None
         rows.append(row)
-    payload = json.dumps(dict(rows=rows,token=token),allow_nan=False).replace("<","\\u003c")
+    payload = json.dumps(dict(rows=rows,token=token,repairs=completed_repairs()),allow_nan=False).replace("<","\\u003c")
     return TEMPLATE.read_text(encoding="utf-8").replace("__PILOT_DATA__", payload)
 
 
