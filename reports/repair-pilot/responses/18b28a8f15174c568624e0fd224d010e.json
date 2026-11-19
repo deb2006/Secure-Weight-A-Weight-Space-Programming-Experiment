@@ -1,0 +1,12 @@
+{
+  "case_id": "18b28a8f15174c568624e0fd224d010e",
+  "damaged_checkpoint": "9bfe6499dcf72a80626b44f99a11ef640a0c1c12ad503b599d1fb0c8f271fdd8",
+  "model": "ChatGPT web / GPT-6 / High (exact variant undisclosed)",
+  "partition": "validation",
+  "prompt_hash": "ea85e6b46b63d16510dc8acb065310124b3f3cf0038e9df406756dd64187679d",
+  "raw_response": null,
+  "reason": "Chat showed completion without a recoverable reply.",
+  "session": "Temporary, unpersonalized. No follow-up or regeneration.",
+  "status": "missing",
+  "time_utc": "2026-11-19T07:12:21.349830+00:00"
+}

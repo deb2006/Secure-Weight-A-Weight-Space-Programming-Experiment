@@ -82,3 +82,15 @@ Files are created exclusively, and checkpoint hashes detect accidental changes r
 These are tiny public classification datasets and a single-seed development demonstration. No accuracy is an estimate of LLM repair performance, malicious-fault detection, permutation robustness or production security. Repeated fixed-seed execution checks software determinism; it is not an independent statistical replication. The visible development test results must not be reused to tune a later confirmatory study. Freeze new study seeds, evidence access and endpoints before that study.
 
 The supplied PRD still says review draft; the user explicitly authorized Sprint 1 and subsequently Sprint 2 on 19 November 2026. See `docs/DECISIONS.md` and the sprint reports for scope decisions and actual evidence. Sprint 3 requires explicit approval. Source-code licensing remains a researcher decision; no repository-wide license has been assumed. External sources and dependency licenses are documented in `RESEARCH_ATTRIBUTION.md`.
+## One-shot chat repair pilot
+
+Open [the portable experiment dashboard](reports/repair-pilot/index.html) locally to explore the twelve saved Iris and Wine cases. For interactive scoring, start the dashboard from the project root:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/repair_pilot.py --serve --port 8766
+```
+
+Open http://127.0.0.1:8766/. Choose a case and download the blind prompt. Send only that text once in a fresh unpersonalized chat. Record the displayed model, effort and complete first answer. Submit the reply in the dashboard to evaluate up to four scalar replacements on a copy of the case checkpoint. The evaluator uses the saved validation split and records how many previously unaffected decisions were preserved. Responses are saved once per case under `reports/repair-pilot/responses/`. Running the script without flags refreshes the portable view.
+
+This development pilot uses one training seed per dataset. The first case was selected by sorting the existing opaque identifiers. A blank completed chat is recorded as missing, an explicit empty edit list is scored as abstention, and malformed patches are recorded as invalid. Accuracy after a missing or invalid answer is undefined. Account model labels and thinking effort describe what the chat interface displayed.
+

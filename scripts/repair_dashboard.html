@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SecureWeight · Repair experiment</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f6f2;color:#182d30;font:16px/1.55 system-ui,sans-serif}main,header>div,footer{max-width:1140px;margin:auto;padding:24px}header{background:#102e33;color:#fff}header>div{padding-top:28px;padding-bottom:34px}header small{color:#a8d9cd;letter-spacing:.12em;font-weight:700}h1{font:clamp(32px,5vw,56px)/1.08 Georgia,serif;max-width:850px;margin:20px 0 12px}header p{max-width:750px;color:#daeae7}h2{font:28px/1.2 Georgia,serif;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.grid,.steps{display:grid;gap:16px}.grid{grid-template-columns:1.15fr 1fr}.steps{grid-template-columns:repeat(3,1fr);margin:0 0 25px}.steps>div{border-top:2px solid #438a78;padding-top:9px}.steps p,article p{margin:4px 0 14px}.card,article{background:#fff;border:1px solid #d4ded8;border-radius:12px;padding:22px;min-width:0}.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px;flex-wrap:wrap}.controls label{font-weight:650}.count{color:#41625e}select,button,input,textarea{font:inherit;color:inherit;padding:8px 12px;border-radius:6px;border:1px solid #a4b6af;background:white;max-width:100%}button{cursor:pointer;font-weight:650}button.primary{background:#155e50;color:white;border-color:#155e50}button:disabled{opacity:.55;cursor:default}section{margin:18px 0}.barrow{display:grid;grid-template-columns:85px 1fr 86px;gap:8px;align-items:center;margin:14px 0}.track{height:12px;background:#f0f3ef;border-radius:3px;overflow:hidden}.bar{height:100%;background:#276a59}.barrow:first-of-type .bar{background:#6d8585}.barrow strong{font-variant-numeric:tabular-nums;text-align:right}.subtle,footer{color:#526965;font-size:14px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.45 monospace;max-height:300px;overflow:auto}textarea,input{display:block;width:100%;margin:4px 0 12px}details{margin:12px 0}summary{cursor:pointer}#heat{overflow:auto;padding:12px 0}.matrix{display:grid;gap:3px;width:max-content}.cell{width:24px;height:24px;border:1px solid #0001;border-radius:3px}.legend{display:inline-block;width:66px;height:9px;background:linear-gradient(90deg,#a34823,#f1f1ed,#087569)}button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #c87637}code{overflow-wrap:anywhere}footer{padding-top:0}#status{font-weight:600}@media(max-width:740px){.grid,.steps{grid-template-columns:1fr}.steps{gap:8px}main,header>div{padding:18px}.card,article{padding:16px}.controls label select{display:block}}
+</style></head><body><header><div><small>SECUREWEIGHT / RESEARCH PILOT</small><h1>Can a language model repair a neural network from its weights?</h1><p>Each trial gives the model a classifier, its task and a budget of four edits. We measure whether its proposal restores predictions and preserves decisions the fault left intact.</p></div></header>
+<main><div class="steps"><div><b>1 · Inspect the weights</b><br>One fresh session receives one classifier.</div><div><b>2 · Propose a repair</b><br>The model can edit up to four values or abstain.</div><div><b>3 · Measure the effect</b><br>Score the proposal on local validation examples.</div></div>
+<div class="controls"><label>Experiment case <select id="cases"></select></label><span id="progress" class="count"></span></div>
+<div class="grid"><article><h2>Inside the classifier</h2><p id="task"></p><p id="architecture" class="subtle"></p><label>Weight tensor <select id="tensor"></select></label><div id="heat"></div><div class="subtle">Negative <span class="legend"></span> positive · white is zero</div><div id="scale" class="subtle"></div><details><summary>Inspect exact numeric values</summary><pre id="values"></pre></details></article>
+<article><h2>Prediction accuracy</h2><p id="samples"></p><div id="bars"></div><p id="retention" class="subtle"></p><p class="subtle">The evaluator holds the clean checkpoint and validation labels. Only the task, network description and current parameters enter the prompt.</p></article></div>
+<section class="card"><h2>Trial controls</h2><p>Export the prompt to a fresh model session with tools disabled. Keep the first reply, including an empty patch or an invalid response.</p><button id="download" class="primary">Download blind prompt</button><details><summary>Read the exact prompt</summary><pre id="prompt"></pre></details>
+<div id="form"><label>Model and version<input id="model" placeholder="Exact model shown for this response"></label><label>First response<textarea id="raw" rows="4" placeholder="Paste the complete model output"></textarea></label><button id="save">Record and score first response</button></div>
+<div id="status" role="status"></div></section></main><footer>Development pilot · One training seed per dataset · Validation results describe these saved cases.</footer>
+<script type="application/json" id="data">__PILOT_DATA__</script>
+<script>
+const {rows,token}=JSON.parse(document.getElementById('data').textContent);
+const el=id=>document.getElementById(id);
+const current=()=>rows[Number(el('cases').value)];
+const option=(label,value)=>new Option(label,value);
+rows.forEach((r,i)=>el('cases').add(option(r.dataset.toUpperCase()+' · '+r.id.slice(0,8),i)));
+el('progress').textContent=rows.filter(r=>r.result).length+' / '+rows.length+' first responses recorded';
+function matrix(){
+ const tensor=current().packet.tensors[el('tensor').value];
+ const values=tensor.values.flat();const limit=Math.max(...values.map(Math.abs));
+ const grid=document.createElement('div');grid.className='matrix';
+ grid.style.gridTemplateColumns='repeat('+tensor.shape.at(-1)+',24px)';
+ values.forEach((v,i)=>{const cell=document.createElement('div');cell.className='cell';
+ const t=limit?Math.abs(v)/limit:0;const hue=v<0?[163,72,35]:[8,117,105];
+ cell.style.background='rgb('+hue.map((x,j)=>Math.round([241,241,237][j]*(1-t)+x*t)).join(',')+')';
+ cell.title='['+(tensor.shape.length===2?Math.floor(i/tensor.shape[1])+', '+i%tensor.shape[1]:i)+'] = '+v;grid.append(cell)});
+ el('heat').replaceChildren(grid);el('scale').textContent='Color range for this tensor: ±'+limit.toPrecision(3);
+ el('values').textContent=JSON.stringify(tensor.values,null,2);
+}
+function draw(){
+ const r=current(),a=r.packet.architecture,res=r.result;
+ el('task').textContent=r.packet.task;el('architecture').textContent=a.input_dim+' inputs → '+a.hidden_dim+' ReLU units → '+a.output_dim+' class scores';
+ el('tensor').replaceChildren(...Object.keys(r.packet.tensors).sort().reverse().map(k=>option(k,k)));
+ el('tensor').value='hidden.weight';matrix();el('prompt').textContent=r.prompt;
+ el('samples').textContent='Correct predictions on the same '+r.n+' validation examples.';
+ el('bars').replaceChildren();
+ for(const [label,value] of [['Healthy',r.original],['As received',r.before],['After reply',res?.after]]){
+ const line=document.createElement('div');line.className='barrow';const name=document.createElement('span');name.textContent=label;
+ const track=document.createElement('div');track.className='track';const bar=document.createElement('div');bar.className='bar';bar.style.width=((value??0)*100)+'%';track.append(bar);
+ const num=document.createElement('strong');num.textContent=value==null?(res||label!=='After reply'?'Unscored':'Pending'):Math.round(value*r.n)+' / '+r.n;line.append(name,track,num);el('bars').append(line)}
+ el('retention').textContent=res?.status==='scored'?res.edits+' edits proposed · '+res.preserved+' of '+res.unaffected+' previously unchanged decisions preserved.':'';
+ el('form').hidden=!token||Boolean(res);el('raw').value='';
+ el('status').textContent=res?'Recorded · '+res.model+' · '+res.status+(res.reason?' · '+res.reason:''):token?'Awaiting first response.':'Portable view. Open the local control dashboard to record a response.';
+}
+el('cases').onchange=draw;el('tensor').onchange=matrix;
+el('download').onclick=()=>{const r=current(),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.prompt],{type:'text/plain'}));a.download=r.id+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+el('save').onclick=async()=>{const model=el('model').value.trim(),response=el('raw').value;
+ if(!model||!response.trim()){el('status').textContent='Enter the model name and first response.';return}
+ el('save').disabled=true;
+ try{const reply=await fetch('/response',{method:'POST',headers:{'Content-Type':'application/json','X-Pilot-Token':token},body:JSON.stringify({case_id:current().id,model,response})});
+ if(!reply.ok)throw Error('Submission returned '+reply.status);sessionStorage.setItem('pilotCase',current().id);location.reload()}
+ catch(e){el('status').textContent=e.message;el('save').disabled=false}};
+if(token){const saved=rows.findIndex(r=>r.id===sessionStorage.getItem('pilotCase'));if(saved>=0)el('cases').value=saved}draw();
+</script></body></html>
