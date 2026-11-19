@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SecureWeight · Neural weight repair</title>
+<meta name="color-scheme" content="dark"><meta name="description" content="Explore SecureWeight's blinded neural weight repair study: two classifiers, exploratory repairs, and twelve paired trials.">
+<style>__STUDY_CSS__</style></head><body>
+<a class="skip" href="#overview">Skip to study</a>
+<header><nav class="wrap"><a class="brand" href="#overview"><span class="brandmark" aria-hidden="true">∿</span> SecureWeight</a><div><a href="#networks">Networks</a><a href="#pilots">Pilot</a><a href="#results">Trials</a><a href="#explorer">Lab</a></div></nav></header>
+<main>
+<section id="overview" class="hero">
+<div class="hero-copy"><p class="kicker">Weight-space research · November 2026</p><h1>Can an LLM repair a neural network?</h1><p class="lead">We gave an LLM the task and the numbers inside a classifier. Could it find damaged connections and restore predictions with at most four edits?</p>
+<a class="cta" href="#results">Explore the 12 trials</a> <a class="paper-link" href="data:application/pdf;base64,__PAPER_BASE64__" download="SecureWeight-IEEE.pdf">Download paper (PDF)</a> <a class="paper-link" href="latest-working-prompt.md" download>Download the successful trial prompt</a>
+<div class="inspiration"><span class="eyebrow">The inspiration</span><p>MIT CSAIL’s experiments asked whether LLMs can read and write neural weights. SecureWeight asks whether they can repair a trained classifier from a single checkpoint. <a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank" rel="noopener noreferrer">Takehi et al., 2026</a></p></div></div>
+<figure class="hero-figure"><div class="figure-head"><span class="eyebrow">Network anatomy</span><select aria-label="Featured network" id="heroDataset"><option value="wine">Wine · Trial 06</option><option value="iris">Iris · Trial 12</option></select></div>
+<canvas id="topology" aria-label="Classifier diagram showing input, hidden and output connections">A fully connected classifier with eight hidden units and three outputs.</canvas>
+<div class="figure-control"><div class="toggle" id="heroState" aria-label="Checkpoint state"><button data-state="healthy">Healthy</button><button data-state="damaged">Damaged</button><button data-state="after">After edits</button></div><span id="wireLegend"></span></div>
+<figcaption id="heroCaption"></figcaption></figure>
+</section>
+<div class="metrics" id="metrics" aria-label="Paired study outcomes"></div>
+<section id="networks" class="chapter">
+<div class="section-head"><div><p class="eyebrow">The testbed</p><h2>Two small neural networks</h2></div><p>Both use one hidden layer and three class scores. Rows stay fixed across the three training seeds for each dataset.</p></div>
+<div id="networkCards" class="two"></div>
+<p class="model-note"><strong>LLM under study</strong> GPT-6, as identified in the experiment conversations.</p>
+</section>
+<section id="pilots" class="chapter">
+<div class="section-head"><div><p class="eyebrow">Exploratory phase</p><h2>What happened in the pilot?</h2></div><p>Five scored cases tested sign reversal, erasing the hidden layer, and damage that left the output weights looking plausible.</p></div>
+<div class="panel pilot-panel"><div class="panel-head"><h3>Pilot scorecard</h3><label>Score on <select id="pilotSplit"><option value="validation">Validation</option><option value="test">Held-out test</option></select></label></div><div class="table-wrap"><table id="pilotTable"><caption class="sr">Correct predictions per pilot case and network state</caption></table></div><p class="note" id="pilotNote"></p></div>
+<div class="pilot-findings"><div><h4>Iris · three replacements</h4><figure id="irisPilotChart" class="pilot-chart"></figure><p>Three of 40 erased parameters reactivated two neurons through petal length and width. All seven validation predictions preserved by the fault also survived the patch. On held-out flowers, 15 errors were corrected and one was introduced.</p></div><div><h4>Wine · four replacements</h4><figure id="winePilotChart" class="pilot-chart"></figure><p>Four edits restored 18/18 correct validation predictions. Held-out accuracy rose from 11/27 to 25/27, two short of the healthy network. Both subtle pilot cases received KEEP, followed by NO when asked about damage.</p></div></div>
+<details class="archive"><summary>Inspect both hidden-layer repairs and their exact weight edits</summary><div class="results" id="comparisons"></div></details>
+</section>
+<section id="results" class="chapter">
+<div class="section-head"><div><p class="eyebrow">Blinded paired study</p><h2>Twelve checkpoints under review</h2></div><p>Each of six trained networks supplied a healthy copy and a partner with three altered output weights. Prompts were shuffled across fresh conversations.</p></div>
+<div class="study-guide"><div><b>One-shot decision</b><p>The LLM could keep the checkpoint, express uncertainty or propose up to four scalar replacements. No examples, scores, repair tools or healthy reference were supplied.</p></div><div><b>Follow-up diagnosis</b><p>The same conversation then answered whether it suspected damage and whether it could specify a patch. Only edits from the original reply were scored on the held-out set.</p></div></div>
+<div class="panel trial-panel"><div class="panel-head"><h3>Trial inspector</h3><label>Dataset <select id="trialFilter"><option value="all">Both datasets</option><option value="iris">Iris</option><option value="wine">Wine</option></select></label></div><div id="trialPicker" aria-label="Choose a trial"></div><div id="trialHeading" class="trial-heading"></div>
+<div class="trial-evidence"><div><h4>LLM decisions</h4><dl id="decisions"></dl><details><summary>Read the follow-up explanation</summary><p id="explanation"></p></details></div><div><h4>Correct classifications</h4><div id="trialAccuracy"></div></div></div>
+<div class="weight-area"><div><h4>Output-weight map</h4><p class="note">Select a connection for its values. Rows are classes and columns are hidden units.</p><div class="map-legend"><span>• Healthy</span><span>○ Damaged</span><span>◆ Edited</span></div></div><div><div id="weightMap"></div><p id="weightReadout" class="weight-readout" aria-live="polite"></p></div></div></div>
+<div class="conclusion"><p class="eyebrow">Inference</p><h3>Finding a fault and fixing it are different outcomes.</h3><p>Across the twelve blinded checkpoints, the initial replies proposed three edits. Each targeted an altered weight. All three replacement values differed from their healthy originals. On Wine trial 06, two replacements corrected four held-out errors. On Iris trial 12, a correctly located sign change left every evaluated prediction unchanged. The other four damaged checkpoints received KEEP.</p><p>Three of six damaged checkpoints drew suspicion. All three positive follow-ups declined to specify an edit. The six healthy controls drew no false alarms.</p></div>
+<details class="archive"><summary>Study design, selection and limits</summary><p>Three training seeds per dataset shared one split. Faults affected three of 24 output weights. Replacement values lay between the healthy layer’s 5th and 95th percentiles and cost two or three correct validation predictions. Held-out scores played no role in fault selection. This small batch measures behavior on these cases; performance across other faults, networks and repeated LLM responses remains open.</p><p>Trial 03 received repeated follow-up wording within a single message. Trial 11’s first completed response followed an interrupted generation and a retry. Earlier blank pilot replies were recorded as missing.</p></details>
+</section>
+<section id="explorer" class="chapter lab"><p class="eyebrow">Development controls</p><h2>Case explorer</h2><p class="intro">Inspect weights and export blind prompts from the original 12 development cases.</p><div class="controls"><label>Experiment case <select id="cases"></select></label><span id="progress" class="count"></span></div>
+<div class="grid"><article><h2>Inside the classifier</h2><p id="task"></p><p id="architecture" class="subtle"></p><label>Weight tensor <select id="tensor"></select></label><div id="heat"></div><div class="subtle">Negative <span class="legend"></span> positive · slate is zero</div><div id="scale" class="subtle"></div><details><summary>Inspect exact numeric values</summary><pre id="values"></pre></details></article>
+<article><h2>Prediction accuracy</h2><p id="samples"></p><div id="bars"></div><p id="retention" class="subtle"></p><p class="subtle">The evaluator holds the clean checkpoint and validation labels. Only the task, network description and current parameters enter the prompt.</p></article></div>
+<section class="card"><h2>Trial controls</h2><p>Export the prompt to a fresh model session with tools disabled. Keep the first reply, including an empty patch or an invalid response.</p><button id="download" class="primary">Download blind prompt</button><details><summary>Read the exact prompt</summary><pre id="prompt"></pre></details>
+<div id="form"><label>Model and version<input id="model" placeholder="Exact model shown for this response"></label><label>First response<textarea id="raw" rows="4" placeholder="Paste the complete model output"></textarea></label><button id="save">Record and score first response</button></div>
+<div id="status" role="status"></div></section></section></main><footer>SecureWeight · Weight-space research · November 2026</footer>
+<script type="application/json" id="data">__PILOT_DATA__</script>
+<script>
+const {rows,token,repairs}=JSON.parse(document.getElementById('data').textContent);
+const el=id=>document.getElementById(id);
+const current=()=>rows[Number(el('cases').value)];
+const option=(label,value)=>new Option(label,value);
+function showRepair(result){
+ const card=document.createElement('article');
+ card.className='result';
+ card.innerHTML='<div class="result-head"><h3></h3><span class="edits"></span></div><table><thead><tr><th scope="col">Network</th><th scope="col">Validation</th><th scope="col">Held-out test</th></tr></thead><tbody></tbody></table><p class="paired"></p><details><summary>View weight edits</summary><pre></pre></details>';
+ card.querySelector('h3').textContent=result.dataset;
+ card.querySelector('.edits').textContent=result.edits.length+' weight edits';
+ card.querySelector('table').setAttribute('aria-label',result.dataset+' correct predictions and accuracy');
+ for(const state of ['healthy','damaged','repaired']){
+   const row=card.querySelector('tbody').insertRow();
+   row.className=state;
+   const name=document.createElement('th');
+   name.scope='row';name.textContent=state[0].toUpperCase()+state.slice(1);row.append(name);
+   for(const split of [result.validation,result.test]){
+     const cell=row.insertCell(), count=split[state], pct=count*100/split.n;
+     cell.innerHTML='<b></b> <small></small><div class="meter" aria-hidden="true"><i></i></div>';
+     cell.querySelector('b').textContent=count+' / '+split.n;
+     cell.querySelector('small').textContent=Number(pct.toFixed(1))+'%';
+     cell.querySelector('i').style.width=pct+'%';
+   }
+ }
+ const delta=result.test.repaired-result.test.damaged;
+ card.querySelector('.paired').textContent='Held-out test: '+(delta>0?'+':'')+delta+' correct after repair ('+result.paired.newly_correct_vs_damaged+' corrected, '+result.paired.newly_wrong_vs_damaged+' newly wrong).';
+ card.querySelector('pre').textContent=result.edits.map(e=>e.tensor+'['+e.index.join(', ')+'] = '+e.value).join('\n');
+ return card;
+}
+el('comparisons').replaceChildren(...repairs.map(showRepair));
+rows.forEach((r,i)=>el('cases').add(option(r.dataset.toUpperCase()+' · '+r.id.slice(0,8),i)));
+el('progress').textContent=rows.filter(r=>r.result).length+' / '+rows.length+' first responses recorded';
+function matrix(){
+ const tensor=current().packet.tensors[el('tensor').value];
+ const values=tensor.values.flat();const limit=Math.max(...values.map(Math.abs));
+ const grid=document.createElement('div');grid.className='matrix';
+ grid.style.gridTemplateColumns='repeat('+tensor.shape.at(-1)+',24px)';
+ values.forEach((v,i)=>{const cell=document.createElement('div');cell.className='cell';
+ const t=limit?Math.abs(v)/limit:0;const hue=v<0?[238,170,120]:[114,223,203];
+ cell.style.background='rgb('+hue.map((x,j)=>Math.round([37,51,72][j]*(1-t)+x*t)).join(',')+')';
+ cell.title='['+(tensor.shape.length===2?Math.floor(i/tensor.shape[1])+', '+i%tensor.shape[1]:i)+'] = '+v;grid.append(cell)});
+ el('heat').replaceChildren(grid);el('scale').textContent='Color range for this tensor: ±'+limit.toPrecision(3);
+ el('values').textContent=JSON.stringify(tensor.values,null,2);
+}
+function draw(){
+ const r=current(),a=r.packet.architecture,res=r.result;
+ el('task').textContent=r.packet.task;el('architecture').textContent=a.input_dim+' inputs → '+a.hidden_dim+' ReLU units → '+a.output_dim+' class scores';
+ el('tensor').replaceChildren(...Object.keys(r.packet.tensors).sort().reverse().map(k=>option(k,k)));
+ el('tensor').value='hidden.weight';matrix();el('prompt').textContent=r.prompt;
+ el('samples').textContent='Correct predictions on the same '+r.n+' validation examples.';
+ el('bars').replaceChildren();
+ for(const [label,value] of [['Healthy',r.original],['As received',r.before],['After reply',res?.after]]){
+ const line=document.createElement('div');line.className='barrow';const name=document.createElement('span');name.textContent=label;
+ const track=document.createElement('div');track.className='track';const bar=document.createElement('div');bar.className='bar';bar.style.width=((value??0)*100)+'%';track.append(bar);
+ const num=document.createElement('strong');num.textContent=value==null?(res||label!=='After reply'?'Unscored':'Pending'):Math.round(value*r.n)+' / '+r.n;line.append(name,track,num);el('bars').append(line)}
+ el('retention').textContent=res?.status==='scored'?res.edits+' edits proposed · '+res.preserved+' of '+res.unaffected+' previously unchanged decisions preserved.':'';
+ el('form').hidden=!token||Boolean(res);el('raw').value='';
+ const displayModel=res?.model?.includes('GPT-6')?'GPT-6':res?.model;
+ el('status').textContent=res?'Recorded · '+displayModel+' · '+res.status+(res.reason?' · '+res.reason:''):token?'Awaiting first response.':'Portable view. The local scoring server records new responses.';
+}
+el('cases').onchange=draw;el('tensor').onchange=matrix;
+el('download').onclick=()=>{const r=current(),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.prompt],{type:'text/plain'}));a.download=r.id+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+el('save').onclick=async()=>{const model=el('model').value.trim(),response=el('raw').value;
+ if(!model||!response.trim()){el('status').textContent='Enter the model name and first response.';return}
+ el('save').disabled=true;
+ try{const reply=await fetch('/response',{method:'POST',headers:{'Content-Type':'application/json','X-Pilot-Token':token},body:JSON.stringify({case_id:current().id,model,response})});
+ if(!reply.ok)throw Error('Submission returned '+reply.status);sessionStorage.setItem('pilotCase',current().id);location.reload()}
+ catch(e){el('status').textContent=e.message;el('save').disabled=false}};
+if(token){const saved=rows.findIndex(r=>r.id===sessionStorage.getItem('pilotCase'));if(saved>=0)el('cases').value=saved}draw();
+</script><script>__STUDY_JS__</script></body></html>

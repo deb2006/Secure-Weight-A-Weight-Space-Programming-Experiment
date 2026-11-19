@@ -8,3 +8,4 @@
 # Preserve supplied references and checksum-addressed evidence byte-for-byte.
 docs/SecureWeight_PRD_v0.1.md -text
 reports/sprint-1/** -text
+reports/sprint-2/** -text

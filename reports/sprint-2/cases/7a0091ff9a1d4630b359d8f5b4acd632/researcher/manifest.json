@@ -1,0 +1,1905 @@
+{
+  "attempted_count": 112,
+  "attempts": [
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.26989150047302246,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0
+      ],
+      "flat_index": 0,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.38013261556625366,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1
+      ],
+      "flat_index": 1,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.3744531273841858,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2
+      ],
+      "flat_index": 2,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.08943280577659607,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3
+      ],
+      "flat_index": 3,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.17733663320541382,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4
+      ],
+      "flat_index": 4,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.252750426530838,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5
+      ],
+      "flat_index": 5,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.7139668464660645,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6
+      ],
+      "flat_index": 6,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.2702844738960266,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7
+      ],
+      "flat_index": 7,
+      "rejection": null,
+      "tensor_name": "hidden.bias"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.7441122531890869,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        0
+      ],
+      "flat_index": 0,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3586820363998413,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        1
+      ],
+      "flat_index": 1,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.1889622062444687,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        2
+      ],
+      "flat_index": 2,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.37839555740356445,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        3
+      ],
+      "flat_index": 3,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.20803427696228027,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        4
+      ],
+      "flat_index": 4,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.24983614683151245,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        5
+      ],
+      "flat_index": 5,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.04974972829222679,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        6
+      ],
+      "flat_index": 6,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.12668122351169586,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        7
+      ],
+      "flat_index": 7,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.11733665317296982,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        8
+      ],
+      "flat_index": 8,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.12622682750225067,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        9
+      ],
+      "flat_index": 9,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.07905212044715881,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        10
+      ],
+      "flat_index": 10,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.22888079285621643,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        11
+      ],
+      "flat_index": 11,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.7646770477294922,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0,
+        12
+      ],
+      "flat_index": 12,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.5467712879180908,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        0
+      ],
+      "flat_index": 13,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.11451498419046402,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        1
+      ],
+      "flat_index": 14,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.305376797914505,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        2
+      ],
+      "flat_index": 15,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.7770983576774597,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        3
+      ],
+      "flat_index": 16,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.1315411627292633,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        4
+      ],
+      "flat_index": 17,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.1848105639219284,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        5
+      ],
+      "flat_index": 18,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.11447302997112274,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        6
+      ],
+      "flat_index": 19,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.020588018000125885,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        7
+      ],
+      "flat_index": 20,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.06436192244291306,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        8
+      ],
+      "flat_index": 21,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.4669874608516693,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        9
+      ],
+      "flat_index": 22,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.42762991786003113,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        10
+      ],
+      "flat_index": 23,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.12539692223072052,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        11
+      ],
+      "flat_index": 24,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.665980339050293,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1,
+        12
+      ],
+      "flat_index": 25,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.16570478677749634,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        0
+      ],
+      "flat_index": 26,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.07085904479026794,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        1
+      ],
+      "flat_index": 27,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.1827336698770523,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        2
+      ],
+      "flat_index": 28,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.08076296746730804,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        3
+      ],
+      "flat_index": 29,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.15517178177833557,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        4
+      ],
+      "flat_index": 30,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.37843966484069824,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        5
+      ],
+      "flat_index": 31,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.031108450144529343,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        6
+      ],
+      "flat_index": 32,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.14691127836704254,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        7
+      ],
+      "flat_index": 33,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.28736257553100586,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        8
+      ],
+      "flat_index": 34,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.4289878308773041,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        9
+      ],
+      "flat_index": 35,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.2381877601146698,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        10
+      ],
+      "flat_index": 36,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.016833471134305,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        11
+      ],
+      "flat_index": 37,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.08124154061079025,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2,
+        12
+      ],
+      "flat_index": 38,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.31558018922805786,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        0
+      ],
+      "flat_index": 39,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.4484117925167084,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        1
+      ],
+      "flat_index": 40,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.34408578276634216,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        2
+      ],
+      "flat_index": 41,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.45526760816574097,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        3
+      ],
+      "flat_index": 42,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.29837459325790405,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        4
+      ],
+      "flat_index": 43,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.028086045756936073,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        5
+      ],
+      "flat_index": 44,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.46688327193260193,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        6
+      ],
+      "flat_index": 45,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.06491103768348694,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        7
+      ],
+      "flat_index": 46,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.21734370291233063,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        8
+      ],
+      "flat_index": 47,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.5725930333137512,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        9
+      ],
+      "flat_index": 48,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.55657559633255,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        10
+      ],
+      "flat_index": 49,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.6026912927627563,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        11
+      ],
+      "flat_index": 50,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.01191165205091238,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        3,
+        12
+      ],
+      "flat_index": 51,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.2817874550819397,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        0
+      ],
+      "flat_index": 52,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.12821123003959656,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        1
+      ],
+      "flat_index": 53,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3750667870044708,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        2
+      ],
+      "flat_index": 54,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.40223151445388794,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        3
+      ],
+      "flat_index": 55,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.30642110109329224,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        4
+      ],
+      "flat_index": 56,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3413528501987457,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        5
+      ],
+      "flat_index": 57,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.6145721077919006,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        6
+      ],
+      "flat_index": 58,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.5922173261642456,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        7
+      ],
+      "flat_index": 59,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.17200018465518951,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        8
+      ],
+      "flat_index": 60,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3421010971069336,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        9
+      ],
+      "flat_index": 61,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3615420460700989,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        10
+      ],
+      "flat_index": 62,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3230144679546356,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        11
+      ],
+      "flat_index": 63,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.544666588306427,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        4,
+        12
+      ],
+      "flat_index": 64,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.0355076864361763,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        0
+      ],
+      "flat_index": 65,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.39536184072494507,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        1
+      ],
+      "flat_index": 66,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.1210641860961914,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        2
+      ],
+      "flat_index": 67,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.1479765921831131,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        3
+      ],
+      "flat_index": 68,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.14386345446109772,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        4
+      ],
+      "flat_index": 69,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.056357357650995255,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        5
+      ],
+      "flat_index": 70,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.2512078881263733,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        6
+      ],
+      "flat_index": 71,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.32305073738098145,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        7
+      ],
+      "flat_index": 72,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.4706944525241852,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        8
+      ],
+      "flat_index": 73,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.09152994304895401,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        9
+      ],
+      "flat_index": 74,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.5411750078201294,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        10
+      ],
+      "flat_index": 75,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.5190389156341553,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        11
+      ],
+      "flat_index": 76,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.1981227695941925,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        5,
+        12
+      ],
+      "flat_index": 77,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.4794554114341736,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        0
+      ],
+      "flat_index": 78,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.21053682267665863,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        1
+      ],
+      "flat_index": 79,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.6531296372413635,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        2
+      ],
+      "flat_index": 80,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.13950613141059875,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        3
+      ],
+      "flat_index": 81,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.30106523633003235,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        4
+      ],
+      "flat_index": 82,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.38725200295448303,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        5
+      ],
+      "flat_index": 83,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.06588206440210342,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        6
+      ],
+      "flat_index": 84,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.03940463811159134,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        7
+      ],
+      "flat_index": 85,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.6183397173881531,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        8
+      ],
+      "flat_index": 86,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.7433398365974426,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        9
+      ],
+      "flat_index": 87,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.30090925097465515,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        10
+      ],
+      "flat_index": 88,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.3142242729663849,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        11
+      ],
+      "flat_index": 89,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.5026745796203613,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        6,
+        12
+      ],
+      "flat_index": 90,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.284728467464447,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        0
+      ],
+      "flat_index": 91,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.052848298102617264,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        1
+      ],
+      "flat_index": 92,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.04347296804189682,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        2
+      ],
+      "flat_index": 93,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.07683055102825165,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        3
+      ],
+      "flat_index": 94,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.3687804341316223,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        4
+      ],
+      "flat_index": 95,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.18761879205703735,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        5
+      ],
+      "flat_index": 96,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.46364885568618774,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        6
+      ],
+      "flat_index": 97,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.28917068243026733,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        7
+      ],
+      "flat_index": 98,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.7330766320228577,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        8
+      ],
+      "flat_index": 99,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.27452877163887024,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        9
+      ],
+      "flat_index": 100,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": 0.0,
+      "before": 0.03798452392220497,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        10
+      ],
+      "flat_index": 101,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.2605600357055664,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        11
+      ],
+      "flat_index": 102,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    },
+    {
+      "accepted": true,
+      "after": -0.0,
+      "before": -0.5093454718589783,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        7,
+        12
+      ],
+      "flat_index": 103,
+      "rejection": null,
+      "tensor_name": "hidden.weight"
+    }
+  ],
+  "case_id": "7a0091ff9a1d4630b359d8f5b4acd632",
+  "changed_count": 112,
+  "config": {
+    "bit": null,
+    "damage_threshold": 0.15,
+    "fraction": 1.0,
+    "magnitude": 0.0,
+    "min_healthy_accuracy": 0.85,
+    "neuron": null,
+    "operator": "scale",
+    "seed": 42,
+    "severe_threshold": 0.3,
+    "tensors": [
+      "hidden.weight",
+      "hidden.bias"
+    ]
+  },
+  "damaged_model_hash": "eb9af15b3c232ca368da69a1f45f2b3dc162454b36bb90407c0721160a520a70",
+  "damaged_validation": {
+    "accuracy": 0.3888888888888889,
+    "class_names": [
+      "class_0",
+      "class_1",
+      "class_2"
+    ],
+    "classification_report": {
+      "accuracy": 0.3888888888888889,
+      "class_0": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 6.0
+      },
+      "class_1": {
+        "f1-score": 0.56,
+        "precision": 0.3888888888888889,
+        "recall": 1.0,
+        "support": 7.0
+      },
+      "class_2": {
+        "f1-score": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 5.0
+      },
+      "macro avg": {
+        "f1-score": 0.18666666666666668,
+        "precision": 0.12962962962962962,
+        "recall": 0.3333333333333333,
+        "support": 18.0
+      },
+      "weighted avg": {
+        "f1-score": 0.2177777777777778,
+        "precision": 0.15123456790123457,
+        "recall": 0.3888888888888889,
+        "support": 18.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        6,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ]
+    ],
+    "loss": 1.089573860168457,
+    "macro_f1": 0.18666666666666668,
+    "macro_precision": 0.12962962962962962,
+    "macro_recall": 0.3333333333333333,
+    "n_samples": 18,
+    "predictions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "sample_indices": [
+      11,
+      15,
+      31,
+      34,
+      35,
+      54,
+      77,
+      78,
+      82,
+      84,
+      100,
+      106,
+      126,
+      134,
+      136,
+      138,
+      153,
+      154
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "zero_division_policy": 0
+  },
+  "dataset_sha256": "3a28849ef2366c4b9d4e382b3fa5624a66f693c04d7fdcf43c529bbb0bb338d7",
+  "eligible_coordinates": 112,
+  "environment": {
+    "dependencies": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "secureweight": "0.1.0",
+      "torch": "2.15.0+cpu"
+    },
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "torch_threads": 1
+  },
+  "evaluation_status": "finite",
+  "healthy_validation": {
+    "accuracy": 1.0,
+    "class_names": [
+      "class_0",
+      "class_1",
+      "class_2"
+    ],
+    "classification_report": {
+      "accuracy": 1.0,
+      "class_0": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 6.0
+      },
+      "class_1": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 7.0
+      },
+      "class_2": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "macro avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 18.0
+      },
+      "weighted avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 18.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0
+      ],
+      [
+        0,
+        0,
+        5
+      ]
+    ],
+    "loss": 0.06224669888615608,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "n_samples": 18,
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "sample_indices": [
+      11,
+      15,
+      31,
+      34,
+      35,
+      54,
+      77,
+      78,
+      82,
+      84,
+      100,
+      106,
+      126,
+      134,
+      136,
+      138,
+      153,
+      154
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "zero_division_policy": 0
+  },
+  "probe_evaluations": 0,
+  "rejected_count": 0,
+  "schema_version": 1,
+  "severity": {
+    "accuracy_drop": 0.6111111111111112,
+    "band": "severe",
+    "damaging": true
+  },
+  "source": {
+    "git_commit": "fc3f51da5a7c998cf5fbadd5e7404f91ef792af8",
+    "git_dirty": true,
+    "source_files": {
+      "__init__.py": "f3123b583f3331db524fce90d58a0749504c5222e7195fc07c5a5f7ce7cb4408",
+      "__main__.py": "2392471aa71ec4397538925463704996d609ebbd39334059643cd65d342e9792",
+      "cli.py": "3b4386b180cbfa5155da60884a6496463a8ba9f1c36414fffa20dcef3a6e49c9",
+      "config.py": "bf49567811f5474cff11b8a0a5e292d1c22a8188ad316e4d602119372879a36f",
+      "data/__init__.py": "ed4d762ed193661c18e58e8f9d5c6b990de0ab9782ce03eaa6cfbfdf1bdab4a9",
+      "evaluation/__init__.py": "ecc7d01c12b4cdedae1bf258cc5a4d50fe2e8c24f86f4694b5c0ff2edd11c69d",
+      "evaluation/figures.py": "e90a8fdccd2e1bcebe905e414257a2f445028c91685be74a309b7cc65929eddc",
+      "experiment.py": "5b9b5255be29829516f25a7fcffee53949c113df56bb1e381df3eb9f64d22fa3",
+      "faults/__init__.py": "2410cf12271966fd9fa56d58a7df39c76690609ed136190564414b8243d4679f",
+      "faults/cases.py": "f3e6bf4877bdb7561fa1af420f0c99ae9eea133288f4607802f3d12389f875dc",
+      "models/__init__.py": "178b9f6d6e5348454f16f96c8beb19c5f7256d7b7216215bba72916fdb9a7715",
+      "models/checkpoints.py": "196fce15dd11aab0bfd27cfe9ee50046f58b9d2d61bea5b57e7dee6f7db39a71",
+      "models/training.py": "f8de84031c70b6b5869e70cbc4ce1d76b30e62890810f6588d23567ab4d061a3",
+      "models/weights.py": "ca435282a8817bfbcd54590b684ef971824357d2a2cc3963272efbea742637d1",
+      "tracking/__init__.py": "899c8b1b06451cf6a8c78371e2a44686019745f848a25cf99483d7b34fab796e"
+    },
+    "source_sha256": "c81835440038398202d01ea8513b4cf3a8e305feed3f6fc946fc7686bc42b868"
+  },
+  "source_model_hash": "7cac7f239abb0cc62b46e34296cc6986ae737c450ff520b7e9802cb00d3243ec",
+  "source_run_id": "wine-seed42-sprint1",
+  "status": "completed",
+  "test_evaluations": 0,
+  "validation_indices": [
+    11,
+    15,
+    31,
+    34,
+    35,
+    54,
+    77,
+    78,
+    82,
+    84,
+    100,
+    106,
+    126,
+    134,
+    136,
+    138,
+    153,
+    154
+  ]
+}

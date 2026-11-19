@@ -1,0 +1,4 @@
+operator: gaussian
+seed: 42
+fraction: 0.1
+magnitude: 0.5

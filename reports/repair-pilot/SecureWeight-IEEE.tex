@@ -1,0 +1,99 @@
+\documentclass[conference,letterpaper]{IEEEtran}
+\usepackage{booktabs,url}
+\title{LLM-Guided Repair of Neural Network Weights\\in a Blinded Paired Study}
+\author{\IEEEauthorblockN{SecureWeight}\IEEEauthorblockA{Research note, 19 November 2026}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Can a large language model (LLM) diagnose and repair a classifier from its parameters and task description alone? We tested GPT-6 Astra Pro, the model identity reported in the experimental conversations, on three Iris and three Wine networks. Each trained network supplied a healthy checkpoint and a copy with three perturbed output weights. Across 12 blinded reviews, the first replies proposed three scalar edits across two damaged checkpoints. All three edits targeted altered weights. Two edits restored the Wine network from 23 to 27 correct predictions on 27 held-out examples. The third edit left every evaluated Iris prediction unchanged. When asked directly about damage, the LLM flagged three of six damaged checkpoints and none of six healthy controls. The results establish one instance of functional recovery and show why fault detection, localization, and selection of a replacement value warrant separate evaluation.
+\end{abstract}
+\begin{IEEEkeywords}
+large language models, neural network repair, fault localization, weight-space programming
+\end{IEEEkeywords}
+
+\section{Introduction}
+Takehi \emph{et al.} explored whether an LLM can read and write neural network parameters directly~\cite{wsp}. SecureWeight studies a narrower question: given a single trained classifier and its intended task, can an LLM recognize a fault and propose a small patch that improves predictions on unseen examples? We distinguish three outcomes. \emph{Detection} is an explicit judgment that damage is suspected. \emph{Localization} is the overlap between proposed edits and injected fault coordinates. \emph{Functional recovery} is measured by the change in correct predictions after applying those edits to a checkpoint copy.
+
+\section{Exploratory Trials}
+The five pilot cases in Table~\ref{tab:pilot} motivated the paired study. In the Iris hidden-layer case, zeroing all 32 input weights and eight biases removed all input dependence. The LLM proposed three replacements: petal length to hidden units 4 and 2 with weights $-1.15$ and $+0.40$, respectively, and petal width to unit 2 with weight $+0.42$. The other 37 parameters stayed at zero. Validation accuracy recovered from 5/15 to the healthy 13/15. The patch preserved all seven validation predictions on which the healthy and damaged networks had agreed. On held-out flowers it corrected 15 errors and introduced one, yielding 21/22 correct against a healthy baseline of 20/22.
+
+\begin{table}[!t]
+\caption{Exploratory cases. H, D, and A denote healthy, damaged, and after the first scored reply. Entries are correct predictions.}\label{tab:pilot}
+\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}llcrrr@{}}\toprule
+Dataset & Fault & Edits & \multicolumn{3}{c}{Validation (H/D/A)}\\\midrule
+Iris & Hidden layer zeroed & 3 & 13/15 & 5/15 & 13/15\\
+Wine & Hidden layer zeroed & 4 & 18/18 & 7/18 & 18/18\\
+Iris & Sign reversal & 0 & 13/15 & 10/15 & 10/15\\
+Iris & Subtle output fault & 0 & 13/15 & 11/15 & 11/15\\
+Wine & Subtle output fault & 0 & 18/18 & 15/18 & 15/18\\\bottomrule
+\end{tabular}
+\end{table}
+Four edits also reactivated the erased Wine classifier. Its held-out scores were 27/27 healthy, 11/27 damaged, and 25/27 after the patch. The Iris sign-reversal case drew an explicit \textsc{unsure} decision. Both subtle pilot cases drew \textsc{keep}, followed by a negative answer when asked about damage. Earlier blank responses were logged as missing. Prompt wording evolved during the pilots; their results are reported separately.
+
+\section{Paired Experimental Design}
+\subsection{Checkpoints and injected faults}
+We trained three multilayer perceptrons per dataset on Iris~\cite{iris} and Wine~\cite{wine} using initialization seeds 101, 202, and 303. Each model had eight hidden ReLU units and three output logits, giving 67 parameters for Iris and 139 for Wine. Standardization used training rows only. Each dataset used one stratified split shared across seeds. Counts for training, reserved probe, validation, and test were 91/22/15/22 for Iris and 106/27/18/27 for Wine. Training used full-batch Adam for 300 epochs at a learning rate of 0.01 and retained the epoch of lowest validation loss.
+
+Each network supplied a healthy control and a damaged copy. For the latter, we sampled three of 24 output weights without replacement and added Gaussian noise ($\sigma=0.6$). Starting at fault seed zero, we kept the first candidate for which all three replacements were nonzero, lay between the healthy layer's 5th and 95th percentiles, and differed from their originals by at most one. The fault also had to cost two or three correct validation predictions. Held-out scores played no role in selection.
+
+\subsection{LLM identity, blinding, and scoring}
+The LLM of choice was \textbf{GPT-6 Astra Pro}. We attribute that name to the model-identification replies in the experimental conversations. The interface displayed Pro; an API model identifier or backend snapshot was unavailable. Each shuffled checkpoint went into a fresh temporary conversation with its task, feature and class order, normalization, forward computation, and current parameters. The prompt withheld the healthy reference, fault coordinates, examples, and scores. It instructed the LLM to work without tools or retraining.
+
+The first reply could specify up to four scalar replacements, recommend keeping the checkpoint, or express uncertainty. We applied first-reply edits to copies and scored validation and held-out predictions. A follow-up in the same conversation separately asked whether the LLM suspected damage and what action it recommended. Trial 03 received the follow-up wording four times in one message. Trial 11's first completed reply followed an interrupted generation and a retry.
+
+\section{Results}
+\subsection{Suspicion and willingness to edit}
+The LLM suspected damage in trials 01, 06, and 12 and in none of the six healthy controls (Table~\ref{tab:pairs}). Observed sensitivity was 3/6 and specificity was 6/6. Each positive diagnosis came with an \textsc{unsure} action and zero proposed replacements on follow-up. Of the four damaged copies originally assigned \textsc{keep}, only trial 01 later drew suspicion. Its explanation singled out four small weights in one output row; one of the four had been altered.
+
+\begin{table}[!t]
+\caption{Paired results by training seed. Trial IDs and suspicion judgments are ordered healthy/damaged. H/D/A scores count correct predictions before damage, after damage, and after the first reply.}\label{tab:pairs}
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrcccc@{}}\toprule
+Dataset & Seed & Trial IDs & Suspect? & Validation & Held-out\\
+ & & H/D & H/D & H/D/A & H/D/A\\\midrule
+Iris & 101 & 09/12 & No/Yes & 13/11/11 & 21/20/20\\
+ & 202 & 04/07 & No/No & 13/11/11 & 20/20/20\\
+ & 303 & 05/03 & No/No & 13/11/11 & 20/20/20\\\midrule
+Wine & 101 & 11/06 & No/Yes & 17/15/17 & 27/23/\textbf{27}\\
+ & 202 & 08/10 & No/No & 17/14/14 & 27/24/24\\
+ & 303 & 02/01 & No/Yes & 17/15/15 & 27/26/26\\\bottomrule
+\end{tabular}\\[3pt]
+\parbox{\columnwidth}{\footnotesize Denominators for validation and held-out data are 15 and 22 on Iris, and 18 and 27 on Wine.}
+\end{table}
+
+\subsection{Localization and functional recovery}
+Every first-reply edit targeted a perturbed coordinate (Fig.~\ref{fig:map}). Across the six damaged copies, the LLM edited three of 18 altered weights. None of its replacements exactly reconstructed the healthy value. All six healthy controls were left untouched.
+
+\begin{figure}[!t]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\newcommand{\A}{\ensuremath{\bullet}}\newcommand{\B}{\ensuremath{\circ}}\newcommand{\Cdot}{\ensuremath{\cdot}}
+\begin{tabular}{@{}ll*{8}{c}@{}}\toprule
+& & \multicolumn{8}{c}{Hidden unit}\\
+Trial & Output & 0&1&2&3&4&5&6&7\\\midrule
+Wine 06&0&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot\\
+&1&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot\\
+&2&\Cdot&\A&\Cdot&\B&\Cdot&\A&\Cdot&\Cdot\\\midrule
+Iris 12&0&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot\\
+&1&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot&\Cdot\\
+&2&\Cdot&\B&\A&\Cdot&\Cdot&\Cdot&\Cdot&\B\\\bottomrule
+\end{tabular}
+\caption{Output-weight maps for the two edited checkpoints. A filled circle marks a damaged weight that the LLM edited, an open circle marks damage left in place, and a dot marks a healthy weight.}\label{fig:map}
+\end{figure}
+
+In Wine trial 06 the LLM reversed two signs in output row 2. Its replacements, $+0.451$ and $+0.413$, exceeded the healthy values of $+0.334$ and $+0.318$. Validation recovered from 15/18 to 17/18 and held-out accuracy from 23/27 to 27/27, matching the healthy network on both metrics. In Iris trial 12, the LLM also reversed a genuinely damaged weight's sign. Its replacement of $-0.899$ overshot the healthy value of $-0.101$. Every validation and held-out prediction stayed the same. Of the six damaged networks, only Wine trial 06 gained held-out accuracy.
+
+\section{Interpretation and Limitations}
+The hidden-layer pilots show how a sparse patch can restore useful input dependence after erasure. The paired study posed a harder diagnostic question because altered weights retained plausible magnitudes. In missed cases the LLM described class preferences that survived corruption. In Iris trial 03, for example, weakening the connection from hidden unit 1 to versicolor preserved the unit's preference for virginica. A correct description of that preference gave little evidence about the original weight.
+
+The test sets establish how each fixed patch behaved on unseen examples from its dataset. Three training seeds shared each split. The validation loss in correct predictions was a fault-selection criterion, and two Iris faults left held-out accuracy unchanged. One review per checkpoint leaves variation between independent LLM replies unmeasured. Follow-ups are second judgments with the first reply in context. Comparison with random or heuristic edits at the same budget remains open.
+
+\section{Conclusion}
+GPT-6 Astra Pro proposed three correctly localized weight edits and restored held-out accuracy in one of six subtly damaged networks. Its follow-up judgments missed half of the damaged copies and raised no alarms on the six healthy controls. The contrast between Wine 06 and Iris 12 makes the evaluation criterion concrete: choosing a damaged coordinate is only part of repair. The replacement value must also improve behavior on held-out examples.
+
+\begin{thebibliography}{3}
+\bibitem{wsp} R. Takehi, J. Teoh, A. Zhang, and O. Khattab, “Sparks of weight-space programming: LLMs can natively read \& write neural network weights,” MIT CSAIL project report, Nov. 2026. [Online]. Available: \url{https://rikiyat.github.io/blog/weight-space-programming/}
+\bibitem{iris} R. A. Fisher, “Iris,” UCI Machine Learning Repository, dataset, doi: 10.24432/C56C76.
+\bibitem{wine} S. Aeberhard and M. Forina, “Wine,” UCI Machine Learning Repository, dataset, doi: 10.24432/C5PC7J.
+\end{thebibliography}
+\end{document}

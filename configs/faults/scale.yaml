@@ -1,0 +1,5 @@
+operator: scale
+seed: 42
+fraction: 1.0
+magnitude: 0.0
+tensors: [hidden.weight, hidden.bias]

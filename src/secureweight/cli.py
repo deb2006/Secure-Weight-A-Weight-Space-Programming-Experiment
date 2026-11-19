@@ -1,4 +1,4 @@
-"""CLI limited to Sprint 1 training, inspection, integrity and figure export."""
+"""Healthy testbed and controlled fault-case CLI."""
 
 import argparse
 import json
@@ -19,6 +19,12 @@ def main(argv=None):
     train.add_argument("--config", required=True)
     train.add_argument("--output", default="outputs")
     train.add_argument("--run-id")
+    corrupt = commands.add_parser("corrupt", help="create an isolated fault case")
+    corrupt.add_argument("--model", required=True, help="healthy run directory")
+    corrupt.add_argument("--config", required=True)
+    corrupt.add_argument("--output", default="outputs/cases")
+    check_case = commands.add_parser("verify-case")
+    check_case.add_argument("--case", required=True)
     for name in ("inspect", "verify", "report"):
         command = commands.add_parser(name)
         command.add_argument("--run", required=True)
@@ -28,6 +34,14 @@ def main(argv=None):
     if args.command == "train":
         path = run_experiment(load_config(args.config), args.output, args.run_id)
         print(json.dumps({"run": str(path), "test": read_json(path / "metrics.json")["test"]}, indent=2))
+    elif args.command == "corrupt":
+        from secureweight.faults import load_fault_config
+        from secureweight.faults.cases import create_case
+        print(create_case(args.model, load_fault_config(args.config), args.output))
+    elif args.command == "verify-case":
+        from secureweight.faults.cases import verify_case
+        result = verify_case(args.case)
+        print(json.dumps({"case_id": result["case_id"], "status": result["status"], "verified": True}))
     else:
         manifest = verify_run(args.run)
         if args.command == "verify":

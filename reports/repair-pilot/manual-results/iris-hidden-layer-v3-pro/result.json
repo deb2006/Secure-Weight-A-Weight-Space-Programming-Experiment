@@ -1,0 +1,49 @@
+{
+  "after": 0.8666666666666667,
+  "before": 0.3333333333333333,
+  "case_id": "8e781ea7b5ab4ae3b118d676939638a4",
+  "correct": 13,
+  "damaged_checkpoint": "917169dc1737c653b52e914fa8be8c09bff37a8235df374f4f94c0a9147bde9c",
+  "edits": 3,
+  "healthy": 0.8666666666666667,
+  "model": "GPT-6 Astra Pro (self-reported); UI: Pro",
+  "normalized_patch": {
+    "case_id": "8e781ea7b5ab4ae3b118d676939638a4",
+    "edits": [
+      {
+        "index": [
+          4,
+          2
+        ],
+        "tensor": "hidden.weight",
+        "value": -1.15
+      },
+      {
+        "index": [
+          2,
+          2
+        ],
+        "tensor": "hidden.weight",
+        "value": 0.4
+      },
+      {
+        "index": [
+          2,
+          3
+        ],
+        "tensor": "hidden.weight",
+        "value": 0.42
+      }
+    ]
+  },
+  "partition": "validation",
+  "preserved": 7,
+  "prompt_file_sha256": "43eaab874492f51bf4c0d5ccde88122deec133d54ad3925cc44a1fd340a45910",
+  "prompt_hash": "39be16c1f0cbb967e9f9c870860ff093b46673eaaef795c397eb08c058897013",
+  "raw_response": "EDIT 3 | hidden.weight[4,2]=-1.15 | hidden.weight[2,2]=0.40 | hidden.weight[2,3]=0.42",
+  "screenshot_sha256": "1c8307b3b2faaa66a7b58f6f7e2ca37241e6971cf9ddb9f8b245a9624c294e6c",
+  "status": "scored",
+  "time_utc": "2026-11-19T07:48:56.668373+00:00",
+  "unaffected": 7,
+  "validation_count": 15
+}

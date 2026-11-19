@@ -1,0 +1,19 @@
+{
+  "case_id": "7a0091ff9a1d4630b359d8f5b4acd632",
+  "config": {
+    "bit": null,
+    "damage_threshold": 0.15,
+    "fraction": 1.0,
+    "magnitude": 0.0,
+    "min_healthy_accuracy": 0.85,
+    "neuron": null,
+    "operator": "scale",
+    "seed": 42,
+    "severe_threshold": 0.3,
+    "tensors": [
+      "hidden.weight",
+      "hidden.bias"
+    ]
+  },
+  "time_utc": "2026-11-19T06:29:40.183940+00:00"
+}

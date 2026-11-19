@@ -1,5 +1,7 @@
 # Sprint 1 decision log
 
+Subsequent authorization: on 19 November 2026 the user instructed proceeding with the next sprint. Sprint 2 implementation follows `SPRINT_2_PROTOCOL.md`; this supersedes the prior pending-approval status for Sprint 2 only. Sprint 3 remains subject to explicit approval.
+
 Date: 9 November 2026. Scope: project foundation and healthy neural-network testbed.
 
 1. **Authorization.** The user-supplied development initialization states that Sprint 0 received initial approval and explicitly authorizes Sprint 1 implementation. This supersedes the supplied PRD's stale draft-status/no-code wording for Sprint 1 only. Preserve the PRD and diagram unchanged as supplied; do not describe the entire research protocol as frozen.

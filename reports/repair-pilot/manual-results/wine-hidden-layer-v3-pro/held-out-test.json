@@ -1,0 +1,215 @@
+{
+  "accuracy": {
+    "damaged": 0.4074074074074074,
+    "healthy": 1.0,
+    "repaired": 0.9259259259259259
+  },
+  "case_id": "3cfe64a549a14afb9c0cd1b481ce7baf",
+  "class_names": [
+    "class_0",
+    "class_1",
+    "class_2"
+  ],
+  "correct": {
+    "damaged": 11,
+    "healthy": 27,
+    "repaired": 25
+  },
+  "damaged_checkpoint_sha256": "eb9af15b3c232ca368da69a1f45f2b3dc162454b36bb90407c0721160a520a70",
+  "healthy_checkpoint_sha256": "7cac7f239abb0cc62b46e34296cc6986ae737c450ff520b7e9802cb00d3243ec",
+  "labels": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "n": 27,
+  "normalized_patch": {
+    "case_id": "3cfe64a549a14afb9c0cd1b481ce7baf",
+    "edits": [
+      {
+        "index": [
+          0,
+          0
+        ],
+        "tensor": "hidden.weight",
+        "value": 0.75
+      },
+      {
+        "index": [
+          0,
+          12
+        ],
+        "tensor": "hidden.weight",
+        "value": 1.0
+      },
+      {
+        "index": [
+          5,
+          6
+        ],
+        "tensor": "hidden.weight",
+        "value": -1.0
+      },
+      {
+        "index": [
+          5,
+          9
+        ],
+        "tensor": "hidden.weight",
+        "value": 0.75
+      }
+    ]
+  },
+  "paired": {
+    "healthy_only_correct_vs_repaired": 2,
+    "healthy_repaired_agreement": 25,
+    "newly_correct_vs_damaged": 15,
+    "newly_wrong_vs_damaged": 1,
+    "repaired_only_correct_vs_healthy": 0
+  },
+  "partition": "test",
+  "predictions": {
+    "damaged": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "healthy": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "repaired": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "row_indices": [
+    7,
+    14,
+    18,
+    20,
+    28,
+    38,
+    42,
+    51,
+    58,
+    60,
+    62,
+    64,
+    66,
+    93,
+    94,
+    98,
+    102,
+    105,
+    108,
+    129,
+    130,
+    132,
+    143,
+    164,
+    166,
+    176,
+    177
+  ],
+  "source_trial_sha256": "d16e9c53b58d7b6fa2911fd4b55063433be0ce38e13fd019c9745c231048088e",
+  "time_utc": "2026-11-19T07:57:34.593589+00:00"
+}

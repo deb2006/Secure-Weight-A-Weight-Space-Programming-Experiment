@@ -1,0 +1,6 @@
+{
+  "cases_verified": 12,
+  "note": "Smoke cases precede a 1e-12 threshold-boundary tolerance fix. Exact historical source is preserved here; all recorded labels remain identical.",
+  "severity_labels_match_final_code": true,
+  "snapshot_matches_run_source_hashes": true
+}

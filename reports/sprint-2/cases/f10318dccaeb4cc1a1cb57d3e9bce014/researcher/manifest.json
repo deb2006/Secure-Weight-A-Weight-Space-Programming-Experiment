@@ -1,0 +1,362 @@
+{
+  "attempted_count": 3,
+  "attempts": [
+    {
+      "accepted": true,
+      "after": 0.31518471240997314,
+      "before": -0.6848152875900269,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        0
+      ],
+      "flat_index": 0,
+      "rejection": null,
+      "tensor_name": "output.bias"
+    },
+    {
+      "accepted": true,
+      "after": 1.9314959049224854,
+      "before": 0.9314958453178406,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        1
+      ],
+      "flat_index": 1,
+      "rejection": null,
+      "tensor_name": "output.bias"
+    },
+    {
+      "accepted": true,
+      "after": 0.3380063772201538,
+      "before": -0.6619936227798462,
+      "bit": null,
+      "changed": true,
+      "coordinates": [
+        2
+      ],
+      "flat_index": 2,
+      "rejection": null,
+      "tensor_name": "output.bias"
+    }
+  ],
+  "case_id": "f10318dccaeb4cc1a1cb57d3e9bce014",
+  "changed_count": 3,
+  "config": {
+    "bit": null,
+    "damage_threshold": 0.15,
+    "fraction": 1.0,
+    "magnitude": 1.0,
+    "min_healthy_accuracy": 0.85,
+    "neuron": null,
+    "operator": "offset",
+    "seed": 42,
+    "severe_threshold": 0.3,
+    "tensors": [
+      "output.bias"
+    ]
+  },
+  "damaged_model_hash": "81fe75c51513f4725c97b309cf935809f43e160a0eda2ece275ffceb39f580c1",
+  "damaged_validation": {
+    "accuracy": 0.8666666666666667,
+    "class_names": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ],
+    "classification_report": {
+      "accuracy": 0.8666666666666667,
+      "macro avg": {
+        "f1-score": 0.8611111111111112,
+        "precision": 0.9047619047619048,
+        "recall": 0.8666666666666667,
+        "support": 15.0
+      },
+      "setosa": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "versicolor": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "virginica": {
+        "f1-score": 0.75,
+        "precision": 1.0,
+        "recall": 0.6,
+        "support": 5.0
+      },
+      "weighted avg": {
+        "f1-score": 0.8611111111111112,
+        "precision": 0.9047619047619048,
+        "recall": 0.8666666666666667,
+        "support": 15.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ],
+    "loss": 0.24148984253406525,
+    "macro_f1": 0.8611111111111112,
+    "macro_precision": 0.9047619047619048,
+    "macro_recall": 0.8666666666666667,
+    "n_samples": 15,
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "sample_indices": [
+      1,
+      32,
+      40,
+      41,
+      47,
+      65,
+      73,
+      74,
+      75,
+      99,
+      105,
+      106,
+      119,
+      126,
+      146
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "zero_division_policy": 0
+  },
+  "dataset_sha256": "aa06b8008ceba42efc654be0f83fdafc786239c9e8f13146044d078f5aab8f23",
+  "eligible_coordinates": 3,
+  "environment": {
+    "dependencies": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.2",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "secureweight": "0.1.0",
+      "torch": "2.15.0+cpu"
+    },
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "torch_threads": 1
+  },
+  "evaluation_status": "finite",
+  "healthy_validation": {
+    "accuracy": 0.8666666666666667,
+    "class_names": [
+      "setosa",
+      "versicolor",
+      "virginica"
+    ],
+    "classification_report": {
+      "accuracy": 0.8666666666666667,
+      "macro avg": {
+        "f1-score": 0.8611111111111112,
+        "precision": 0.9047619047619048,
+        "recall": 0.8666666666666667,
+        "support": 15.0
+      },
+      "setosa": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "versicolor": {
+        "f1-score": 0.8333333333333334,
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "support": 5.0
+      },
+      "virginica": {
+        "f1-score": 0.75,
+        "precision": 1.0,
+        "recall": 0.6,
+        "support": 5.0
+      },
+      "weighted avg": {
+        "f1-score": 0.8611111111111112,
+        "precision": 0.9047619047619048,
+        "recall": 0.8666666666666667,
+        "support": 15.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        2,
+        3
+      ]
+    ],
+    "loss": 0.24148984253406525,
+    "macro_f1": 0.8611111111111112,
+    "macro_precision": 0.9047619047619048,
+    "macro_recall": 0.8666666666666667,
+    "n_samples": 15,
+    "predictions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "sample_indices": [
+      1,
+      32,
+      40,
+      41,
+      47,
+      65,
+      73,
+      74,
+      75,
+      99,
+      105,
+      106,
+      119,
+      126,
+      146
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "zero_division_policy": 0
+  },
+  "probe_evaluations": 0,
+  "rejected_count": 0,
+  "schema_version": 1,
+  "severity": {
+    "accuracy_drop": 0.0,
+    "band": "none_or_improved",
+    "damaging": false
+  },
+  "source": {
+    "git_commit": "fc3f51da5a7c998cf5fbadd5e7404f91ef792af8",
+    "git_dirty": true,
+    "source_files": {
+      "__init__.py": "f3123b583f3331db524fce90d58a0749504c5222e7195fc07c5a5f7ce7cb4408",
+      "__main__.py": "2392471aa71ec4397538925463704996d609ebbd39334059643cd65d342e9792",
+      "cli.py": "3b4386b180cbfa5155da60884a6496463a8ba9f1c36414fffa20dcef3a6e49c9",
+      "config.py": "bf49567811f5474cff11b8a0a5e292d1c22a8188ad316e4d602119372879a36f",
+      "data/__init__.py": "ed4d762ed193661c18e58e8f9d5c6b990de0ab9782ce03eaa6cfbfdf1bdab4a9",
+      "evaluation/__init__.py": "ecc7d01c12b4cdedae1bf258cc5a4d50fe2e8c24f86f4694b5c0ff2edd11c69d",
+      "evaluation/figures.py": "e90a8fdccd2e1bcebe905e414257a2f445028c91685be74a309b7cc65929eddc",
+      "experiment.py": "5b9b5255be29829516f25a7fcffee53949c113df56bb1e381df3eb9f64d22fa3",
+      "faults/__init__.py": "2410cf12271966fd9fa56d58a7df39c76690609ed136190564414b8243d4679f",
+      "faults/cases.py": "f3e6bf4877bdb7561fa1af420f0c99ae9eea133288f4607802f3d12389f875dc",
+      "models/__init__.py": "178b9f6d6e5348454f16f96c8beb19c5f7256d7b7216215bba72916fdb9a7715",
+      "models/checkpoints.py": "196fce15dd11aab0bfd27cfe9ee50046f58b9d2d61bea5b57e7dee6f7db39a71",
+      "models/training.py": "f8de84031c70b6b5869e70cbc4ce1d76b30e62890810f6588d23567ab4d061a3",
+      "models/weights.py": "ca435282a8817bfbcd54590b684ef971824357d2a2cc3963272efbea742637d1",
+      "tracking/__init__.py": "899c8b1b06451cf6a8c78371e2a44686019745f848a25cf99483d7b34fab796e"
+    },
+    "source_sha256": "c81835440038398202d01ea8513b4cf3a8e305feed3f6fc946fc7686bc42b868"
+  },
+  "source_model_hash": "79e31ba03d90407233dac3c2d901bf8625e5b32e78be036e7024ad75041b5173",
+  "source_run_id": "iris-seed42-sprint1",
+  "status": "completed",
+  "test_evaluations": 0,
+  "validation_indices": [
+    1,
+    32,
+    40,
+    41,
+    47,
+    65,
+    73,
+    74,
+    75,
+    99,
+    105,
+    106,
+    119,
+    126,
+    146
+  ]
+}

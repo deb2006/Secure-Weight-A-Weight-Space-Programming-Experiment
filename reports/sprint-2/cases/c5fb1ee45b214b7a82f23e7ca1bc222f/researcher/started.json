@@ -1,0 +1,16 @@
+{
+  "case_id": "c5fb1ee45b214b7a82f23e7ca1bc222f",
+  "config": {
+    "bit": null,
+    "damage_threshold": 0.15,
+    "fraction": 1.0,
+    "magnitude": 0.5,
+    "min_healthy_accuracy": 0.85,
+    "neuron": 0,
+    "operator": "sign",
+    "seed": 42,
+    "severe_threshold": 0.3,
+    "tensors": []
+  },
+  "time_utc": "2026-11-19T06:29:36.918759+00:00"
+}

@@ -1,0 +1,4 @@
+operator: sign
+seed: 42
+fraction: 1.0
+neuron: 0
