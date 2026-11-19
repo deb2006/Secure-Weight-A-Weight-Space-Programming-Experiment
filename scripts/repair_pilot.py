@@ -1,5 +1,6 @@
 """Build a portable pilot dashboard or serve it locally with first-response scoring."""
 import argparse
+import base64
 from copy import deepcopy
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -137,8 +138,14 @@ def render(cases, token=""):
         response = PILOT/"responses"/(row["id"]+".json")
         row["result"] = read_json(response) if response.is_file() else None
         rows.append(row)
-    payload = json.dumps(dict(rows=rows,token=token,repairs=completed_repairs()),allow_nan=False).replace("<","\\u003c")
-    return TEMPLATE.read_text(encoding="utf-8").replace("__PILOT_DATA__", payload)
+    payload = dict(rows=rows,token=token,repairs=completed_repairs(),
+                   study=read_json(PILOT / "study-observations.json"))
+    page = TEMPLATE.read_text(encoding="utf-8")
+    for marker, name in (("__STUDY_CSS__", "repair_study.css"), ("__STUDY_JS__", "repair_study.js")):
+        page = page.replace(marker, (TEMPLATE.parent / name).read_text(encoding="utf-8"))
+    paper = base64.b64encode((PILOT / "SecureWeight-IEEE.pdf").read_bytes()).decode("ascii")
+    page = page.replace("__PAPER_BASE64__", paper)
+    return page.replace("__PILOT_DATA__", json.dumps(payload, allow_nan=False).replace("<", "\\u003c"))
 
 
 def serve(cases, port):

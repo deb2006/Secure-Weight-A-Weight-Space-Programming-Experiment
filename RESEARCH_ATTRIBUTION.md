@@ -1,5 +1,7 @@
 # Research Attribution Register
 
+One-shot study update (19 November 2026): SecureWeight's blinded prompts, trial scoring, dashboard, and research note are project-specific work. The motivating research is R. Takehi, J. Teoh, A. Zhang, and O. Khattab, [“Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights”](https://rikiyat.github.io/blog/weight-space-programming/) (MIT CSAIL, 2026). We cite its question about reading and writing weights as inspiration. SecureWeight did not reuse its research code, reproduce its experimental setup, or claim its findings as our own. The observed chat model name, GPT-6 Astra Pro, came from the trial conversations; a backend model identifier was unavailable.
+
 Sprint 2 addition (19 November 2026): the fault sampler, case orchestration and tests are newly written project code. They use the already attributed NumPy RNG, PyTorch tensor/model APIs and Python's standard-library `struct` for IEEE-754 bit reinterpretation. Gaussian perturbation, XOR bit faults, sign/scale/offset operations are conventional techniques; no novelty or reproduction of a cited research implementation is claimed. No new dependency or external code was introduced.
 
 Scope: Sprint 1. Checked 9 November 2026. This register separates dependency use, dataset use and future research context. SecureWeight's project-specific orchestration, configuration, tests and artifact contracts were newly written with Codex assistance; standard MLP training and classification metrics are not original research contributions. No third-party research repository code was copied or adapted into Sprint 1.
@@ -26,8 +28,8 @@ The complete resolved environment, including transitive dependencies, is pinned 
 - [scikit-learn common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html): split before preprocessing; fit learned transforms on training rows only.
 - Scientific Visuals & Tables skill by the installed plugin authors: restrained scientific-figure design and final-size QA guidance. Plot implementation is newly written; no proprietary fonts, reference figures or template code are redistributed. Design references include [GPT-6 Astra system card](https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf), [HealthBench reliability curves](https://arxiv.org/html/2505.08775v1/figures/worst.png), and [GPT-4.1 retrieval heatmap](https://openai.com/index/gpt-4-1/#evaluations). No model-evaluation evidence from those sources is used as SecureWeight data.
 
-## Research context, not implemented in this sprint
+## Further research context
 
-The unchanged supplied PRD includes its R1–R7 literature leads: Weight-Space Programming, Git Re-Basin, permutation-equivariant neural functionals, REGLO and neural-network fault/recovery work. These are user-supplied background references, not validated novelty evidence or reproduced methods in Sprint 1. Their bibliographic metadata, current status and applicable code/data licenses must be reviewed before using them in later implementation or publication. No literature result is claimed as a SecureWeight result.
+The supplied PRD includes further R1–R7 literature leads: Git Re-Basin, permutation-equivariant neural functionals, REGLO and neural-network fault/recovery work. These are background references, not reproduced methods or validated novelty evidence. In particular, the proposed symmetry and permutation experiments remain future work. No literature result is claimed as a SecureWeight result.
 
 The PRD and architectural diagram are user-supplied design inputs. Their draft status and authorization reconciliation are recorded in `docs/DECISIONS.md`. Repository release licensing and final publication authorship remain decisions for the research team.
